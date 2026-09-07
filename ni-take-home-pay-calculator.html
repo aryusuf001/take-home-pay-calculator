@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary Meta Tags -->
+  <title>Northern Ireland Take-Home Pay Calculator (2026/2027) | Salary & Tax Calculator</title>
+  <meta name="title" content="Northern Ireland Take-Home Pay Calculator (2026/2027) | Salary & Tax Calculator">
+  <meta name="description" content="Calculate your exact Northern Ireland take-home pay, PAYE income tax, National Insurance (NI), and pension contributions for the 2026/2027 tax year instantly.">
+  <meta name="keywords" content="take home pay calculator ni, northern ireland salary calculator, ni net pay calculator, paye income tax northern ireland, hmrc salary calculator ni, belfast salary calculator">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="TakeHomePayCalc.me">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://takehomepaycalc.me/ni-take-home-pay-calculator">
+  <meta property="og:title" content="Northern Ireland Take-Home Pay Calculator (2026/2027) | Salary & Tax Calculator">
+  <meta property="og:description" content="Calculate your exact Northern Ireland take-home pay, PAYE income tax, National Insurance, and pension deductions instantly.">
+  <meta property="og:image" content="https://takehomepaycalc.me/assets/logo.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://takehomepaycalc.me/ni-take-home-pay-calculator">
+  <meta name="twitter:title" content="Northern Ireland Take-Home Pay Calculator (2026/2027)">
+  <meta name="twitter:description" content="Calculate your exact Northern Ireland net salary after PAYE tax, NI, and pension deductions.">
+  <meta name="twitter:image" content="https://takehomepaycalc.me/assets/logo.png">
+
+  <!-- Favicon & Icons -->
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+
+  <!-- Structured Data: WebApplication & FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://takehomepaycalc.me/ni-take-home-pay-calculator#webapp",
+        "url": "https://takehomepaycalc.me/ni-take-home-pay-calculator",
+        "name": "Northern Ireland Take-Home Pay Calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript",
+        "description": "Calculate net salary, PAYE income tax, Class 1 National Insurance, and pension deductions for taxpayers in Northern Ireland."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://takehomepaycalc.me/ni-take-home-pay-calculator#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://takehomepaycalc.me/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Northern Ireland Take-Home Pay Calculator",
+            "item": "https://takehomepaycalc.me/ni-take-home-pay-calculator"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://takehomepaycalc.me/ni-take-home-pay-calculator#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Are income tax rates in Northern Ireland the same as England and Wales?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, Northern Ireland follows the standard UK Income Tax bands and rates set by HMRC (20% Basic, 40% Higher, and 45% Additional Rate), unlike Scotland which has devolved income tax rates."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the Northern Ireland Personal Allowance for 2026/2027?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The standard Personal Allowance in Northern Ireland is £12,570. Income up to this threshold is tax-free for most taxpayers."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+ <style>
+  :root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --bg: #f8fafc;
+    --card-bg: #ffffff;
+    --text: #0f172a;
+    --text-muted: #475569;
+    --border: #e2e8f0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
+
+  /* Header & Navigation */
+  header { background: var(--card-bg); border-bottom: 1px solid var(--border); padding: 1rem 2rem; position: relative; }
+  nav { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+  
+  .logo-container { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; }
+  .logo-img { width: 38px; height: 38px; object-fit: contain; }
+  .logo-text { font-size: 1.25rem; font-weight: 700; color: var(--primary); }
+
+  .nav-menu { display: flex; gap: 1rem; list-style: none; }
+  .nav-menu a { text-decoration: none; color: var(--text-muted); font-size: 0.9rem; font-weight: 500; }
+  .nav-menu a:hover { color: var(--primary); }
+
+  .menu-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text); }
+
+  /* Main Container */
+  main { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
+  .hero-title { text-align: center; margin-bottom: 2rem; }
+  .hero-title h1 { font-size: 2.2rem; color: var(--text); margin-bottom: 0.5rem; }
+  .hero-title p { color: var(--text-muted); font-size: 1.05rem; }
+
+  /* Calculator Layout */
+  .calc-container { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; background: var(--card-bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+  
+  .form-group { margin-bottom: 1.2rem; }
+  .form-group label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem; }
+  .form-group input, .form-group select { width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 6px; font-size: 1rem; }
+  .form-group input:focus, .form-group select:focus { outline: 2px solid var(--primary); border-color: transparent; }
+
+  /* Results Table */
+  .results-card { background: var(--bg); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border); }
+  .results-card h2 { font-size: 1.2rem; margin-bottom: 1rem; }
+  .results-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; }
+  .results-table th, .results-table td { padding: 0.6rem 0; border-bottom: 1px solid var(--border); }
+  .results-table tr.highlight td { font-weight: 700; color: var(--primary-dark); font-size: 1.05rem; border-bottom: none; }
+
+  /* Expanded Content Typography & Formatting */
+  .content-section { 
+    margin-top: 3.5rem; 
+    background: var(--card-bg); 
+    padding: 2.5rem; 
+    border-radius: 12px; 
+    border: 1px solid var(--border); 
+  }
+  
+  .content-section h2 { font-size: 1.8rem; margin-bottom: 1.2rem; color: var(--text); border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1.3rem; margin: 2rem 0 0.8rem; color: var(--primary-dark); }
+  .content-section h4 { font-size: 1.1rem; margin: 1.2rem 0 0.5rem; color: var(--text); }
+  .content-section p { margin-bottom: 1.2rem; color: var(--text-muted); font-size: 1rem; line-height: 1.7; }
+  
+  .content-section ul, .content-section ol { margin: 0 0 1.5rem 1.5rem; color: var(--text-muted); }
+  .content-section li { margin-bottom: 0.5rem; line-height: 1.6; }
+
+  /* Embedded In-Content Data Tables */
+  .content-section table { width: 100%; border-collapse: collapse; margin: 1.5rem 0 2rem; background: var(--bg); border-radius: 6px; overflow: hidden; border: 1px solid var(--border); }
+  .content-section th, .content-section td { padding: 0.8rem 1rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.95rem; }
+  .content-section th { background: #edf2f7; font-weight: 600; color: var(--text); }
+  .content-section tr:last-child td { border-bottom: none; }
+
+  /* Hub Section */
+  .hub-section, .faq-section { margin-top: 3.5rem; }
+  .hub-section h2, .faq-section h2 { font-size: 1.5rem; margin-bottom: 1.5rem; text-align: center; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.2rem; }
+  .card { background: var(--card-bg); border: 1px solid var(--border); padding: 1.25rem; border-radius: 8px; text-decoration: none; color: inherit; transition: transform 0.1s, border-color 0.1s; }
+  .card:hover { transform: translateY(-2px); border-color: var(--primary); }
+  .card h3 { font-size: 1.1rem; color: var(--primary); margin-bottom: 0.3rem; }
+  .card p { font-size: 0.85rem; color: var(--text-muted); }
+
+  /* FAQ Accordion Details */
+  .faq-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 6px; padding: 1rem; margin-bottom: 0.8rem; }
+  .faq-item summary { font-weight: 600; cursor: pointer; color: var(--text); }
+  .faq-item p { margin-top: 0.5rem; color: var(--text-muted); font-size: 0.95rem; }
+
+  /* Footer */
+  footer { text-align: center; padding: 2rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 4rem; }
+
+  /* Mobile Responsive Table and Menu Styles */
+  @media (max-width: 768px) {
+    header { padding: 1rem; }
+    .calc-container { grid-template-columns: 1fr; }
+    .menu-toggle { display: block; }
+    .nav-menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0; right: 0;
+      background: var(--card-bg);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem;
+      gap: 0.8rem;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    }
+    .nav-menu.active { display: flex; }
+    .content-section { padding: 1.2rem; }
+    .content-section table { display: block; overflow-x: auto; white-space: nowrap; }
+  }
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T3E3V013H2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-T3E3V013H2');
+</script>
+</head>
+<body>
+
+  <header>
+    <nav aria-label="Main Navigation">
+      <a href="/" class="logo-container">
+        <img src="assets/logo.png" alt="TakeHomePayCalc Logo" class="logo-img" width="38" height="38">
+        <span class="logo-text">Takehomepaycalc</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">☰</button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="/scotland-take-home-pay-calculator">Scotland</a></li>
+        <li><a href="/nhs-take-home-pay-calculator">NHS</a></li>
+        <li><a href="/teacher-take-home-pay-calculator">Teachers</a></li>
+        <li><a href="/monthly-take-home-pay-calculator">Monthly</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-title">
+      <h1>Northern Ireland Take-Home Pay Calculator (2026/2027)</h1>
+      <p>Calculate your exact net salary in Northern Ireland after PAYE Income Tax, National Insurance, and pension deductions.</p>
+    </section>
+
+    <!-- Interactive App Container -->
+    <section class="calc-container" aria-label="Northern Ireland Salary Calculator Tool">
+      <div class="calc-inputs">
+        <div class="form-group">
+          <label for="salary">Gross Annual Salary (£)</label>
+          <input type="number" id="salary" value="35000" placeholder="e.g. 35000" oninput="calculatePay()" aria-required="true">
+        </div>
+        <div class="form-group">
+          <label for="tax-year">Tax Year</label>
+          <select id="tax-year" onchange="calculatePay()">
+            <option value="2026">2026 / 2027</option>
+            <option value="2025">2025 / 2026</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="pension">Workplace Pension (%)</label>
+          <input type="number" id="pension" value="5" min="0" max="100" oninput="calculatePay()">
+        </div>
+      </div>
+
+      <div class="results-card" aria-live="polite">
+        <h2>Your Net Salary Breakdown</h2>
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th scope="col">Deduction</th>
+              <th scope="col">Yearly</th>
+              <th scope="col">Monthly</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Gross Pay</td>
+              <td id="gross-year">£0</td>
+              <td id="gross-month">£0</td>
+            </tr>
+            <tr>
+              <td>Income Tax (PAYE)</td>
+              <td id="tax-year-val">£0</td>
+              <td id="tax-month-val">£0</td>
+            </tr>
+            <tr>
+              <td>National Insurance</td>
+              <td id="ni-year">£0</td>
+              <td id="ni-month">£0</td>
+            </tr>
+            <tr>
+              <td>Pension Deduction</td>
+              <td id="pension-year">£0</td>
+              <td id="pension-month">£0</td>
+            </tr>
+            <tr class="highlight">
+              <td>Net Take-Home Pay</td>
+              <td id="net-year">£0</td>
+              <td id="net-month">£0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SEO Content Area -->
+    <article class="content-section">
+  <h2>Complete Guide to Take-Home Pay and Taxation in Northern Ireland</h2>
+  <p>Understanding your exact net salary after statutory deductions is crucial for financial planning across Northern Ireland. Whether you are employed in Belfast, Derry/Londonderry, Lisburn, or working remotely for a UK-wide employer, the journey from your headline gross salary to your monthly take-home pay involves specific tax rules set by His Majesty’s Revenue and Customs (HMRC).</p>
+  <p>Unlike Scotland, which operates a devolved income tax system with separate tax rates and bands, Northern Ireland follows the unified UK tax framework. However, regional factors such as local public sector pension schemes (HSC Pension, NITPS), distinct cross-border tax considerations with the Republic of Ireland, and specific student loan structures impact workers across Northern Ireland. This comprehensive guide breaks down every line item on your pay slip.</p>
+
+  <h3>1. How PAYE Works in Northern Ireland</h3>
+  <p>Pay As You Earn (PAYE) is the automated tax collection system used by HMRC across Northern Ireland. Your employer processes your earnings through payroll software before dispersing your net pay, automatically calculating and deducting Income Tax, Class 1 National Insurance Contributions (NICs), workplace pension contributions, and student loan repayments.</p>
+  <p>PAYE operates on a cumulative basis over the UK tax year, which runs from 6th April to 5th April of the following calendar year. This ensures that your tax-free allowance is distributed evenly across all 12 monthly or 52 weekly pay periods, preventing sudden tax shocks unless your earnings or tax codes change mid-year.</p>
+
+  <h3>2. Tax Codes in Northern Ireland</h3>
+  <p>Your employer uses an HMRC-assigned tax code to determine how much of your earnings are tax-free. For the vast majority of taxpayers in Northern Ireland with a single job, the standard tax code is <strong>1257L</strong>.</p>
+  <ul>
+    <li><strong>1257:</strong> Represents the £12,570 tax-free Personal Allowance allocated to UK taxpayers.</li>
+    <li><strong>L:</strong> Signifies entitlement to the standard tax-free Personal Allowance.</li>
+  </ul>
+  <p>Key tax code variants to keep in mind:</p>
+  <ul>
+    <li><strong>BR / 0T:</strong> Indicates that your full pay is taxed at the 20% Basic Rate without any Personal Allowance applied (common for second jobs).</li>
+    <li><strong>K Codes:</strong> Used when uncollected tax from previous years or taxable workplace benefits (such as private healthcare or company vehicles) exceed your Personal Allowance.</li>
+    <li><strong>NT:</strong> Issued when no tax is to be collected on your earnings under specific statutory exemptions.</li>
+  </ul>
+
+  <h3>3. Personal Allowance and Tapering Rules</h3>
+  <p>The standard tax-free Personal Allowance across Northern Ireland is **£12,570**. You pay zero Income Tax on earnings up to this threshold. However, high earners are subject to the HMRC Personal Allowance Tapering rule.</p>
+  <p>If your Adjusted Net Income exceeds **£100,000**, your Personal Allowance is reduced by £1 for every £2 earned above £100,000. Once your income reaches **£125,140**, your tax-free allowance is completely removed. This creates an effective marginal tax rate of **60%** on earnings between £100,000 and £125,140 (40% higher rate tax plus 20% effective tax from the lost allowance, excluding National Insurance).</p>
+
+  <h3>4. Income Tax Bands and Rates for Northern Ireland</h3>
+  <p>Northern Ireland shares its Income Tax rates and thresholds directly with England and Wales. The progressive Income Tax brackets for the 2026/2027 tax year are structured as follows:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Tax Band</th>
+        <th>Taxable Income Bracket</th>
+        <th>Income Tax Rate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Personal Allowance</td>
+        <td>Up to £12,570</td>
+        <td>0%</td>
+      </tr>
+      <tr>
+        <td>Basic Rate</td>
+        <td>£12,571 to £50,270</td>
+        <td>20%</td>
+      </tr>
+      <tr>
+        <td>Higher Rate</td>
+        <td>£50,271 to £125,140</td>
+        <td>40%</td>
+      </tr>
+      <tr>
+        <td>Additional Rate</td>
+        <td>Over £125,140</td>
+        <td>45%</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Because Income Tax is progressive, higher rates only apply to the portion of your income that falls into that specific tier. Earning £55,000 does not mean your entire salary is taxed at 40%; only the £4,730 earned above the £50,270 threshold incurs the 40% rate.</p>
+
+  <h3>5. National Insurance Contributions (NICs) in Northern Ireland</h3>
+  <p>National Insurance is a statutory payroll deduction that finances public services, including the National Health Service and the State Pension. Unlike Income Tax, Employee Class 1 National Insurance is calculated per pay cycle rather than cumulatively across the full year.</p>
+
+  <p>For employed individuals in Northern Ireland, Class 1 National Insurance rates are:</p>
+  <ul>
+    <li><strong>Below Primary Threshold (Up to £12,570/yr or £1,048/mo):</strong> 0% National Insurance.</li>
+    <li><strong>Main Rate (£12,570 to £50,270/yr):</strong> Earnings in this bracket incur a Class 1 NIC rate of <strong>8%</strong>.</li>
+    <li><strong>Upper Rate (Above £50,270/yr):</strong> Earnings exceeding the Upper Earnings Limit are taxed at <strong>2%</strong>.</li>
+  </ul>
+
+  <h3>6. Workplace and Public Sector Pensions in Northern Ireland</h3>
+  <p>Northern Ireland features both standard private workplace pension auto-enrolment schemes and major regional public sector schemes:</p>
+  <ul>
+    <li><strong>Health and Social Care (HSC) Pension Scheme:</strong> Designed for healthcare workers in Northern Ireland, structured around tiered contribution rates depending on gross income.</li>
+    <li><strong>Northern Ireland Teachers' Pension Scheme (NITPS):</strong> The dedicated pension system for educators across Northern Ireland primary, secondary, and further education sectors.</li>
+    <li><strong>Private Sector Auto-Enrolment:</strong> Standard auto-enrolment schemes require a minimum total contribution of 8% (typically 5% employee, 3% employer).</li>
+  </ul>
+
+  <p>Pension contribution processing models:</p>
+  <h4>A. Net Pay Arrangement</h4>
+  <p>Pension deductions are subtracted before Income Tax is applied, automatically giving full tax relief at your top marginal rate. (Note: NI is still calculated on original gross earnings).</p>
+
+  <h4>B. Salary Sacrifice</h4>
+  <p>You agree to reduce your contractual gross pay in exchange for employer pension contributions. This reduces both Income Tax **AND** National Insurance contributions, making it the most tax-efficient method available.</p>
+
+  <h4>C. Relief at Source</h4>
+  <p>Contributions are taken after tax. The pension provider claims basic 20% tax relief directly from HMRC into your pension pot. Higher-rate taxpayers must claim additional relief via HMRC or Self Assessment.</p>
+
+  <h3>7. Student Loan Repayments in Northern Ireland</h3>
+  <p>Students from Northern Ireland who take out higher education loans through Student Finance NI are typically placed on **Plan 1**. If you studied elsewhere in the UK or hold postgraduate loans, other plans may apply.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Student Loan Type</th>
+        <th>Annual Threshold</th>
+        <th>Deduction Rate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Plan 1 (Standard Northern Ireland / Student Finance NI)</td>
+        <td>£24,990</td>
+        <td>9% over threshold</td>
+      </tr>
+      <tr>
+        <td>Plan 2 (Post-2012 England & Wales)</td>
+        <td>£27,295</td>
+        <td>9% over threshold</td>
+      </tr>
+      <tr>
+        <td>Plan 5 (Undergraduates starting 2023+)</td>
+        <td>£25,000</td>
+        <td>9% over threshold</td>
+      </tr>
+      <tr>
+        <td>Postgraduate Loan</td>
+        <td>£21,000</td>
+        <td>6% over threshold</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>8. Worked Northern Ireland Salary Calculation Example</h3>
+  <p>Let us walk through a complete net salary calculation for a Northern Ireland resident earning a gross salary of **£38,000** with a 5% pension contribution (Net Pay) and a Plan 1 Student Loan.</p>
+
+  <h4>Step 1: Calculate Pension Contribution</h4>
+  <p>5% of £38,000 = **£1,900 / year** (£158.33 / month).</p>
+
+  <h4>Step 2: Calculate Taxable Gross Income</h4>
+  <p>£38,000 - £1,900 = **£36,100 Taxable Income**.</p>
+
+  <h4>Step 3: Calculate Income Tax (PAYE)</h4>
+  <p>£36,100 - £12,570 (Personal Allowance) = **£23,530 subject to 20% Basic Rate Tax**.</p>
+  <p>20% of £23,530 = **£4,706 Annual Income Tax** (£392.17 / month).</p>
+
+  <h4>Step 4: Calculate Employee National Insurance (Class 1)</h4>
+  <p>£38,000 - £12,570 = **£25,430 subject to 8% NI**.</p>
+  <p>8% of £25,430 = **£2,034.40 Annual National Insurance** (£169.53 / month).</p>
+
+  <h4>Step 5: Calculate Student Loan Repayment (Plan 1)</h4>
+  <p>£38,000 - £24,990 (Plan 1 Threshold) = **£13,010 subject to 9% repayment**.</p>
+  <p>9% of £13,010 = **£1,170.90 Annual Student Loan Payment** (£97.58 / month).</p>
+
+  <h4>Step 6: Total Net Take-Home Pay Summary</h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Component</th>
+        <th>Annual Amount</th>
+        <th>Monthly Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Gross Pay</td>
+        <td>£38,000.00</td>
+        <td>£3,166.67</td>
+      </tr>
+      <tr>
+        <td>Workplace Pension (5%)</td>
+        <td>-£1,900.00</td>
+        <td>-£158.33</td>
+      </tr>
+      <tr>
+        <td>Income Tax (PAYE)</td>
+        <td>-£4,706.00</td>
+        <td>-£392.17</td>
+      </tr>
+      <tr>
+        <td>National Insurance (Class 1)</td>
+        <td>-£2,034.40</td>
+        <td>-£169.53</td>
+      </tr>
+      <tr>
+        <td>Student Loan (Plan 1)</td>
+        <td>-£1,170.90</td>
+        <td>-£97.58</td>
+      </tr>
+      <tr>
+        <td><strong>Net Take-Home Pay</strong></td>
+        <td><strong>£28,188.70</strong></td>
+        <td><strong>£2,349.06</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>9. Cross-Border & Special Tax Scenarios in Northern Ireland</h3>
+  <p>Northern Ireland's unique geography introduces specific scenarios that can impact individual tax returns:</p>
+  <ul>
+    <li><strong>Cross-Border Workers (NI & Republic of Ireland):</strong> If you live in Northern Ireland but commute to work in the Republic of Ireland (or vice versa), complex tax rules apply. Double Taxation Treaties generally ensure you receive credit for tax paid in one jurisdiction against liability in another, though filing Self Assessment returns with HMRC is usually required.</li>
+    <li><strong>Remote Working for UK Mainland Employers:</strong> Residents of Northern Ireland working remotely for English or Welsh companies are taxed identically to local NI employees under standard UK PAYE rules.</li>
+    <li><strong>Marriage Allowance:</strong> If one spouse earns under £12,570 and the other is a basic-rate taxpayer, transferring 10% (£1,260) of the Personal Allowance saves up to £252 annually in Income Tax.</li>
+  </ul>
+
+  <h3>10. Key Strategies for Maximizing Net Pay in Northern Ireland</h3>
+  <ol>
+    <li><strong>Leverage Salary Sacrifice Schemes:</strong> Utilizing salary sacrifice for workplace pensions, EV lease schemes, or cycle-to-work initiatives provides dual savings across both Income Tax and National Insurance.</li>
+    <li><strong>Monitor Pension Tiers for Public Sector Roles:</strong> For HSC or teaching staff, staying informed on pension contribution threshold tiers helps accurately project take-home changes during pay rises.</li>
+    <li><strong>Verify Tax Codes Annually:</strong> Always check your annual P60 and monthly pay slips to ensure HMRC has assigned the correct tax code and tax-free allowance.</li>
+  </ol>
+
+  <p>Use our Northern Ireland Take-Home Pay Calculator above to model your net salary across custom pension, student loan, and salary configurations.</p>
+</article>
+
+    <!-- Hub Section with SEO Keywords -->
+    <section class="hub-section">
+      <h2>Specialized UK Tax Calculators</h2>
+      <div class="grid">
+        <a href="/scotland-take-home-pay-calculator" class="card">
+          <h3>Scottish Tax Calculator</h3>
+          <p>Calculations using Scottish Income Tax bands and thresholds.</p>
+        </a>
+        <a href="/nhs-take-home-pay-calculator" class="card">
+          <h3>NHS Pay Calculator</h3>
+          <p>Accounts for Agenda for Change bands and NHS pension tiers.</p>
+        </a>
+        <a href="/teacher-take-home-pay-calculator" class="card">
+          <h3>Teacher Pay Calculator</h3>
+          <p>Calculates salary after Teachers' Pension Scheme (TPS) deductions.</p>
+        </a>
+        <a href="/monthly-take-home-pay-calculator" class="card">
+          <h3>Monthly Pay Calculator</h3>
+          <p>Detailed monthly and weekly take-home pay budgeting breakdown.</p>
+        </a>
+        <a href="/london-take-home-pay-calculator" class="card">
+          <h3>London Weighting Calculator</h3>
+          <p>Includes High Cost Area Supplements for London commuters.</p>
+        </a>
+        <a href="/take-home-pay-calculator-2025-2026" class="card">
+          <h3>2025/2026 Tax Year Tool</h3>
+          <p>Compare previous tax years against current income tax rates.</p>
+        </a>
+        <a href="/ni-take-home-pay-calculator" class="card">
+          <h3>Northern Ireland Calculator</h3>
+          <p>Take-home pay estimates tailored for Northern Ireland employees.</p>
+        </a>
+        <a href="/ireland-take-home-pay-calculator" class="card">
+          <h3>Republic of Ireland Calculator</h3>
+          <p>Includes USC, PRSI, and Irish Tax Credit calculations.</p>
+        </a>
+        <a href="/student-loan-take-home-pay-calculator" class="card">
+          <h3>Student Loan Calculator</h3>
+          <p>Calculates deductions across Plan 1, Plan 2, Plan 5 & Postgrad loans.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion for Search Featured Snippets -->
+    <section class="faq-section">
+  <h2>Frequently Asked Questions</h2>
+
+  <details class="faq-item">
+    <summary>Are income tax rates in Northern Ireland the same as England and Wales?</summary>
+    <p>Yes. Northern Ireland shares the standard UK Income Tax bands and rates managed by HMRC: 20% Basic Rate, 40% Higher Rate, and 45% Additional Rate. Income Tax rates in Northern Ireland are not devolved like they are in Scotland.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>What is the Personal Allowance in Northern Ireland for 2026/2027?</summary>
+    <p>The standard tax-free Personal Allowance is <strong>£12,570</strong>. Earnings up to this amount are free from Income Tax. The allowance tapers down by £1 for every £2 earned above £100,000, reaching £0 for incomes of £125,140 or more.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>Which student loan plan applies to Northern Ireland students?</summary>
+    <p>Students funded through <strong>Student Finance NI</strong> are generally placed on <strong>Plan 1</strong>, which has a repayment threshold of £24,990 per year and a 9% repayment rate on income above that threshold.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>How is Class 1 National Insurance calculated in Northern Ireland?</summary>
+    <p>Employees in Northern Ireland pay <strong>8%</strong> on earnings between the Primary Threshold (£12,570 per year) and the Upper Earnings Limit (£50,270 per year). Any earnings above £50,270 are subject to a <strong>2%</strong> National Insurance rate.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>How does cross-border work between Northern Ireland and Republic of Ireland affect tax?</summary>
+    <p>Cross-border workers living in Northern Ireland but working in Ireland (or vice-versa) are covered by the UK-Ireland Double Taxation Agreement. You pay tax based on residency and employment location rules, usually requiring a Self Assessment tax return with HMRC to claim double taxation relief.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>Do pension contributions reduce my tax bill in Northern Ireland?</summary>
+    <p>Yes. Contributions made via Salary Sacrifice or Net Pay Arrangements reduce your taxable gross income before Income Tax is applied, automatically giving you tax relief at your highest marginal rate.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>What does the 1257L tax code mean on my Northern Ireland pay slip?</summary>
+    <p>Tax code <strong>1257L</strong> indicates that you are entitled to the standard tax-free Personal Allowance of £12,570 for the tax year.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>What is Salary Sacrifice and how does it benefit NI workers?</summary>
+    <p>Salary Sacrifice is an agreement to exchange part of your gross salary for a benefit like pension contributions or a cycle scheme. This lowers your statutory gross pay, saving you both Income Tax and National Insurance.</p>
+  </details>
+</section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 TakeHomePayCalc.me — Accurate UK Net Salary & Income Tax Calculations</p>
+  </footer>
+
+  <script>
+    // Navigation Toggle Logic
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    // Core Salary Engine Logic
+    function calculatePay() {
+      const gross = parseFloat(document.getElementById('salary').value) || 0;
+      const pensionPercent = parseFloat(document.getElementById('pension').value) || 0;
+
+      const personalAllowance = 12570;
+      const basicRateThreshold = 50270;
+      const pensionDeduction = gross * (pensionPercent / 100);
+      const taxableGross = Math.max(0, gross - pensionDeduction);
+
+      let tax = 0;
+      if (taxableGross > personalAllowance) {
+        if (taxableGross <= basicRateThreshold) {
+          tax = (taxableGross - personalAllowance) * 0.20;
+        } else {
+          tax = ((basicRateThreshold - personalAllowance) * 0.20) + ((taxableGross - basicRateThreshold) * 0.40);
+        }
+      }
+
+      let ni = 0;
+      const niThreshold = 12570;
+      const niUpperLimit = 50270;
+      if (gross > niThreshold) {
+        if (gross <= niUpperLimit) {
+          ni = (gross - niThreshold) * 0.08;
+        } else {
+          ni = ((niUpperLimit - niThreshold) * 0.08) + ((gross - niUpperLimit) * 0.02);
+        }
+      }
+
+      const net = gross - tax - ni - pensionDeduction;
+
+      document.getElementById('gross-year').innerText = '£' + Math.round(gross).toLocaleString();
+      document.getElementById('gross-month').innerText = '£' + Math.round(gross / 12).toLocaleString();
+
+      document.getElementById('tax-year-val').innerText = '£' + Math.round(tax).toLocaleString();
+      document.getElementById('tax-month-val').innerText = '£' + Math.round(tax / 12).toLocaleString();
+
+      document.getElementById('ni-year').innerText = '£' + Math.round(ni).toLocaleString();
+      document.getElementById('ni-month').innerText = '£' + Math.round(ni / 12).toLocaleString();
+
+      document.getElementById('pension-year').innerText = '£' + Math.round(pensionDeduction).toLocaleString();
+      document.getElementById('pension-month').innerText = '£' + Math.round(pensionDeduction / 12).toLocaleString();
+
+      document.getElementById('net-year').innerText = '£' + Math.round(net).toLocaleString();
+      document.getElementById('net-month').innerText = '£' + Math.round(net / 12).toLocaleString();
+    }
+
+    calculatePay();
+  </script>
+</body>
+</html>

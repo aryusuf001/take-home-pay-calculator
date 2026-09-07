@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary Meta Tags -->
+  <title>Teacher Take-Home Pay Calculator UK (2026/2027) | Pay Scales & TPS</title>
+  <meta name="title" content="Teacher Take-Home Pay Calculator UK (2026/2027) | Pay Scales & TPS">
+  <meta name="description" content="Calculate your exact UK teacher take-home pay, Main & Upper pay scales, Teachers' Pension Scheme (TPS) tiers, PAYE tax, and National Insurance for 2026/2027.">
+  <meta name="keywords" content="teacher take home pay calculator, teachers take home pay calculator, uk teacher salary calculator, teachers pension calculator, main pay scale calculator">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="TakeHomePayCalc.me">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://takehomepaycalc.me/teacher-take-home-pay-calculator">
+  <meta property="og:title" content="Teacher Take-Home Pay Calculator UK (2026/2027)">
+  <meta property="og:description" content="Calculate your exact UK teacher net salary after TPS pension tiers, PAYE income tax, and National Insurance.">
+  <meta property="og:image" content="https://takehomepaycalc.me/assets/logo.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://takehomepaycalc.me/teacher-take-home-pay-calculator">
+  <meta name="twitter:title" content="Teacher Take-Home Pay Calculator UK (2026/2027)">
+  <meta name="twitter:description" content="Estimate net salary for UK teachers across Main, Upper, and Leadership pay scales including TPS tiers.">
+  <meta name="twitter:image" content="https://takehomepaycalc.me/assets/logo.png">
+
+  <!-- Favicon & Icons -->
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+
+  <!-- Structured Data: WebApplication & FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://takehomepaycalc.me/teacher-take-home-pay-calculator#webapp",
+        "url": "https://takehomepaycalc.me/teacher-take-home-pay-calculator",
+        "name": "Teacher Take-Home Pay Calculator UK",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript",
+        "description": "Calculate net pay for UK teachers accounting for pay scales, TLR allowances, London weighting, and Teachers' Pension Scheme tiers."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://takehomepaycalc.me/teacher-take-home-pay-calculator#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://takehomepaycalc.me/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Teacher Calculator",
+            "item": "https://takehomepaycalc.me/teacher-take-home-pay-calculator"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://takehomepaycalc.me/teacher-take-home-pay-calculator#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How is a UK teacher's take-home pay calculated?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Your net salary as a teacher is calculated by taking your base scale pay (plus any TLR or SEN allowances and London weighting) and deducting tiered Teachers' Pension Scheme (TPS) contributions, PAYE Income Tax, Class 1 National Insurance, and student loans."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the Teachers' Pension Scheme (TPS) contribution rates for 2026/2027?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "TPS employee contribution rates range from 7.4% for earnings up to £34,289 up to 11.7% for earnings of £92,602 and above, assessed on your actual gross pensionable salary."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
+
+    /* Header & Navigation */
+    header { background: var(--card-bg); border-bottom: 1px solid var(--border); padding: 1rem 2rem; position: relative; }
+    nav { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    
+    .logo-container { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; }
+    .logo-img { width: 38px; height: 38px; object-fit: contain; }
+    .logo-text { font-size: 1.25rem; font-weight: 700; color: var(--primary); }
+
+    .nav-menu { display: flex; gap: 1rem; list-style: none; }
+    .nav-menu a { text-decoration: none; color: var(--text-muted); font-size: 0.9rem; font-weight: 500; }
+    .nav-menu a:hover { color: var(--primary); }
+
+    .menu-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text); }
+
+    /* Main Container */
+    main { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
+    .hero-title { text-align: center; margin-bottom: 2rem; }
+    .hero-title h1 { font-size: 2.2rem; color: var(--text); margin-bottom: 0.5rem; }
+    .hero-title p { color: var(--text-muted); font-size: 1.05rem; }
+
+    /* Calculator Layout */
+    .calc-container { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; background: var(--card-bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+    
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem; }
+    .form-group input, .form-group select { width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 6px; font-size: 1rem; }
+    .form-group input:focus, .form-group select:focus { outline: 2px solid var(--primary); border-color: transparent; }
+
+    /* Results Table */
+    .results-card { background: var(--bg); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border); }
+    .results-card h2 { font-size: 1.2rem; margin-bottom: 1rem; }
+    .results-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; }
+    .results-table th, .results-table td { padding: 0.6rem 0; border-bottom: 1px solid var(--border); }
+    .results-table tr.highlight td { font-weight: 700; color: var(--primary-dark); font-size: 1.05rem; border-bottom: none; }
+
+    /* Expanded Content Typography & Formatting */
+    .content-section { 
+      margin-top: 3.5rem; 
+      background: var(--card-bg); 
+      padding: 2.5rem; 
+      border-radius: 12px; 
+      border: 1px solid var(--border); 
+    }
+    
+    .content-section h2 { font-size: 1.8rem; margin-bottom: 1.2rem; color: var(--text); border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; }
+    .content-section h3 { font-size: 1.3rem; margin: 2rem 0 0.8rem; color: var(--primary-dark); }
+    .content-section h4 { font-size: 1.1rem; margin: 1.2rem 0 0.5rem; color: var(--text); }
+    .content-section p { margin-bottom: 1.2rem; color: var(--text-muted); font-size: 1rem; line-height: 1.7; }
+    
+    .content-section ul, .content-section ol { margin: 0 0 1.5rem 1.5rem; color: var(--text-muted); }
+    .content-section li { margin-bottom: 0.5rem; line-height: 1.6; }
+
+    /* Embedded In-Content Data Tables */
+    .content-section table { width: 100%; border-collapse: collapse; margin: 1.5rem 0 2rem; background: var(--bg); border-radius: 6px; overflow: hidden; border: 1px solid var(--border); }
+    .content-section th, .content-section td { padding: 0.8rem 1rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.95rem; }
+    .content-section th { background: #edf2f7; font-weight: 600; color: var(--text); }
+    .content-section tr:last-child td { border-bottom: none; }
+
+    /* Hub Section */
+    .hub-section, .faq-section { margin-top: 3.5rem; }
+    .hub-section h2, .faq-section h2 { font-size: 1.5rem; margin-bottom: 1.5rem; text-align: center; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.2rem; }
+    .card { background: var(--card-bg); border: 1px solid var(--border); padding: 1.25rem; border-radius: 8px; text-decoration: none; color: inherit; transition: transform 0.1s, border-color 0.1s; }
+    .card:hover { transform: translateY(-2px); border-color: var(--primary); }
+    .card h3 { font-size: 1.1rem; color: var(--primary); margin-bottom: 0.3rem; }
+    .card p { font-size: 0.85rem; color: var(--text-muted); }
+
+    /* FAQ Accordion Details */
+    .faq-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 6px; padding: 1rem; margin-bottom: 0.8rem; }
+    .faq-item summary { font-weight: 600; cursor: pointer; color: var(--text); }
+    .faq-item p { margin-top: 0.5rem; color: var(--text-muted); font-size: 0.95rem; }
+
+    /* Footer */
+    footer { text-align: center; padding: 2rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 4rem; }
+
+    /* Mobile Responsive Styles */
+    @media (max-width: 768px) {
+      header { padding: 1rem; }
+      .calc-container { grid-template-columns: 1fr; }
+      .menu-toggle { display: block; }
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0; right: 0;
+        background: var(--card-bg);
+        border-bottom: 1px solid var(--border);
+        padding: 1rem;
+        gap: 0.8rem;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+      }
+      .nav-menu.active { display: flex; }
+      .content-section { padding: 1.2rem; }
+      .content-section table { display: block; overflow-x: auto; white-space: nowrap; }
+    }
+  </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T3E3V013H2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-T3E3V013H2');
+</script>
+</head>
+<body>
+
+  <header>
+    <nav aria-label="Main Navigation">
+      <a href="/" class="logo-container">
+        <img src="assets/logo.png" alt="TakeHomePayCalc Logo" class="logo-img" width="38" height="38">
+        <span class="logo-text">Takehomepaycalc</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">☰</button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="/scotland-take-home-pay-calculator">Scotland</a></li>
+        <li><a href="/nhs-take-home-pay-calculator">NHS</a></li>
+        <li><a href="/teacher-take-home-pay-calculator">Teachers</a></li>
+        <li><a href="/monthly-take-home-pay-calculator">Monthly</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-title">
+      <h1>Teacher Take-Home Pay Calculator UK (2026/2027)</h1>
+      <p>Calculate your exact net teaching salary after Teachers' Pension Scheme (TPS), PAYE tax, National Insurance, and student loans.</p>
+    </section>
+
+    <!-- Interactive Calculator Component -->
+    <section class="calc-container" aria-label="Teacher Salary Calculator Tool">
+      <div class="calc-inputs">
+        <div class="form-group">
+          <label for="pay-region">Pay Region & Scale Level</label>
+          <select id="pay-region" onchange="updateSalaryFromPreset()">
+            <option value="custom">Custom Gross Salary Entry</option>
+            <option value="31650">Rest of England - Main Pay Scale M1 (£31,650)</option>
+            <option value="37338">Rest of England - Main Pay Scale M6 (£37,338)</option>
+            <option value="43607">Rest of England - Upper Pay Scale U1 (£43,607)</option>
+            <option value="46525">Rest of England - Upper Pay Scale U3 (£46,525)</option>
+            <option value="38748">Inner London - Main Pay Scale M1 (£38,748)</option>
+            <option value="49084">Inner London - Main Pay Scale M6 (£49,084)</option>
+            <option value="53643">Inner London - Upper Pay Scale U1 (£53,643)</option>
+            <option value="56959">Inner London - Upper Pay Scale U3 (£56,959)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="salary">Gross Annual Pay (Base + TLR/Allowances) (£)</label>
+          <input type="number" id="salary" value="37338" placeholder="e.g. 37338" oninput="calculateTeacherPay()" aria-required="true">
+        </div>
+        <div class="form-group">
+          <label for="tax-year">Tax Year</label>
+          <select id="tax-year" onchange="calculateTeacherPay()">
+            <option value="2026">2026 / 2027</option>
+            <option value="2025">2025 / 2026</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="student-loan">Student Loan Plan</label>
+          <select id="student-loan" onchange="calculateTeacherPay()">
+            <option value="none">No Student Loan Repayment</option>
+            <option value="plan1">Plan 1 (Pre-2012)</option>
+            <option value="plan2" selected>Plan 2 (Post-2012 England & Wales)</option>
+            <option value="plan5">Plan 5 (Undergraduates 2023+)</option>
+            <option value="postgrad">Postgraduate Loan Only (6%)</option>
+            <option value="plan2_postgrad">Plan 2 + Postgraduate Loan</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="results-card" aria-live="polite">
+        <h2>Your Net Teaching Pay Breakdown</h2>
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th scope="col">Deduction Item</th>
+              <th scope="col">Yearly</th>
+              <th scope="col">Monthly</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Gross Teaching Salary</td>
+              <td id="gross-year">£0</td>
+              <td id="gross-month">£0</td>
+            </tr>
+            <tr>
+              <td>Teachers' Pension (TPS)</td>
+              <td id="pension-year">£0</td>
+              <td id="pension-month">£0</td>
+            </tr>
+            <tr>
+              <td>Income Tax (PAYE)</td>
+              <td id="tax-year-val">£0</td>
+              <td id="tax-month-val">£0</td>
+            </tr>
+            <tr>
+              <td>National Insurance (Class 1)</td>
+              <td id="ni-year">£0</td>
+              <td id="ni-month">£0</td>
+            </tr>
+            <tr>
+              <td>Student Loan Repayment</td>
+              <td id="loan-year">£0</td>
+              <td id="loan-month">£0</td>
+            </tr>
+            <tr class="highlight">
+              <td>Net Take-Home Pay</td>
+              <td id="net-year">£0</td>
+              <td id="net-month">£0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SEO Comprehensive Guide Section -->
+    <article class="content-section">
+      <h2>Comprehensive Guide to Teacher Pay Scales, Pensions, and Take-Home Salary</h2>
+      <p>Understanding compensation for classroom teachers and educational leaders in the United Kingdom requires navigating a distinct, standardized public sector pay framework. Unlike general commercial roles where earnings are negotiated individually, school teachers in England, Wales, Scotland, and Northern Ireland are paid according to nationally agreed pay scales, regional geographic weightings, and statutory allowance frameworks regulated by the Department for Education (DfE) and the School Teachers' Pay and Conditions Document (STPCD).</p>
+      
+      <p>Determining your actual take-home pay each month as a qualified teacher involves several factors beyond base pay. You must calculate progressive Teachers' Pension Scheme (TPS) contributions, regional pay scales, Teaching and Learning Responsibility (TLR) payments, Special Educational Needs (SEN) allowances, and standard HMRC statutory deductions such as PAYE Income Tax, Class 1 National Insurance, and Student Loan repayments. This guide breaks down every component of the UK teacher compensation structure.</p>
+
+      <h3>1. National Teacher Pay Scales Architecture</h3>
+      <p>The majority of state-funded primary, secondary, and special school teachers in England are compensated across four primary pay ranges: the Main Pay Scale (MPS), the Upper Pay Scale (UPS), the Unqualified Teacher Pay Scale, and the Leadership Pay Range. Progression along these scales depends on performance evaluations, professional standards, and length of service.</p>
+
+      <p>To reflect variations in living costs, teacher pay scales are split into four geographic zones: Rest of England, Outer London, Inner London, and Fringe Areas. Below is an overview of standard full-time teaching pay scales:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Scale Point</th>
+            <th>Rest of England</th>
+            <th>Fringe Area</th>
+            <th>Outer London</th>
+            <th>Inner London</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>M1 (Entry / ECT)</td>
+            <td>£31,650</td>
+            <td>£33,000</td>
+            <td>£36,000</td>
+            <td>£38,748</td>
+          </tr>
+          <tr>
+            <td>M2</td>
+            <td>£33,600</td>
+            <td>£34,900</td>
+            <td>£38,000</td>
+            <td>£40,800</td>
+          </tr>
+          <tr>
+            <td>M3</td>
+            <td>£35,700</td>
+            <td>£37,000</td>
+            <td>£40,100</td>
+            <td>£42,900</td>
+          </tr>
+          <tr>
+            <td>M4</td>
+            <td>£37,900</td>
+            <td>£39,200</td>
+            <td>£42,300</td>
+            <td>£45,100</td>
+          </tr>
+          <tr>
+            <td>M5</td>
+            <td>£40,300</td>
+            <td>£41,600</td>
+            <td>£44,800</td>
+            <td>£47,500</td>
+          </tr>
+          <tr>
+            <td>M6 (Top Main Scale)</td>
+            <td>£43,607</td>
+            <td>£44,950</td>
+            <td>£47,200</td>
+            <td>£49,084</td>
+          </tr>
+          <tr>
+            <td>UPS 1 (Upper Threshold)</td>
+            <td>£45,600</td>
+            <td>£46,900</td>
+            <td>£49,800</td>
+            <td>£53,643</td>
+          </tr>
+          <tr>
+            <td>UPS 2</td>
+            <td>£47,300</td>
+            <td>£48,600</td>
+            <td>£51,600</td>
+            <td>£55,300</td>
+          </tr>
+          <tr>
+            <td>UPS 3 (Top Upper Scale)</td>
+            <td>£49,000</td>
+            <td>£50,300</td>
+            <td>£53,400</td>
+            <td>£56,959</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>2. Allowances: TLRs, SEN, and Additional Responsibilities</h3>
+      <p>Teachers who take on additional leadership duties or specialized instructional roles receive supplementary allowances added directly to their base scale salary:</p>
+
+      <ul>
+        <li>
+          <strong>Teaching and Learning Responsibility (TLR) Payments:</strong> TLR allowances are awarded to teachers who manage subject departments, lead key stages, or coordinate curriculum areas. TLR1 (major leadership responsibility) ranges from <strong>£9,272 to £15,690</strong> per year; TLR2 (line management or subject leadership) ranges from <strong>£3,214 to £7,847</strong> per year; and TLR3 (fixed-term targeted projects) ranges from <strong>£639 to £3,169</strong> per year.
+        </li>
+        <li>
+          <strong>Special Educational Needs (SEN) Allowances:</strong> Teachers working in designated special educational needs schools or dedicated resource units receive an additional SEN allowance ranging from <strong>£2,539 to £5,009</strong> per year.
+        </li>
+        <li>
+          <strong>Excellence and Advanced Skills Premiums:</strong> Lead Practitioners receive elevated salaries on a dedicated scale (typically £47,000 to £72,000 depending on location), while Assistant Headteachers, Deputy Heads, and Headteachers operate on the dedicated Leadership Scale (L1 to L43).
+        </li>
+      </ul>
+
+      <p>All TLR and SEN allowances form part of your total pensionable teaching income, meaning they are subject to Teachers' Pension contribution tiers, PAYE tax, and National Insurance.</p>
+
+      <h3>3. Teachers' Pension Scheme (TPS) Architecture</h3>
+      <p>The Teachers' Pension Scheme (TPS) is a defined benefit public sector pension system. Active members accrue retirement benefits under the <strong>2015 Career Average Revalued Earnings (CARE) scheme</strong>.</p>
+
+      <p>Under the CARE scheme, you build up pension benefits each year equal to <strong>1/57th (1.75%)</strong> of your pensionable earnings for that year. Accumulated funds are revalued annually in line with the Consumer Prices Index (CPI) to maintain inflation-adjusted purchasing power.</p>
+
+      <h4>TPS Tiered Member Contribution Structure</h4>
+      <p>Member contribution rates are tiered based on actual gross earnings rather than full-time equivalent (FTE) benchmarks. This structure ensures part-time teachers pay a contribution tier matched directly to their actual earnings.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Contribution Tier Level</th>
+            <th>Actual Annual Pensionable Earnings Bracket (2026/2027)</th>
+            <th>Member Contribution Rate</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Tier 1</td>
+            <td>Up to £34,289</td>
+            <td>7.4%</td>
+          </tr>
+          <tr>
+            <td>Tier 2</td>
+            <td>£34,290 to £46,220</td>
+            <td>8.6%</td>
+          </tr>
+          <tr>
+            <td>Tier 3</td>
+            <td>£46,221 to £54,785</td>
+            <td>9.6%</td>
+          </tr>
+          <tr>
+            <td>Tier 4</td>
+            <td>£54,786 to £72,560</td>
+            <td>10.2%</td>
+          </tr>
+          <tr>
+            <td>Tier 5</td>
+            <td>£72,561 to £98,920</td>
+            <td>11.3%</td>
+          </tr>
+          <tr>
+            <td>Tier 6</td>
+            <td>£98,921 and above</td>
+            <td>11.7%</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>Tax Relief via Net Pay Arrangement</h4>
+      <p>TPS employee contributions are processed through payroll as a <strong>Net Pay Arrangement</strong>. Your pension contributions are deducted from gross pay *before* PAYE Income Tax is calculated, giving you immediate tax relief at your highest marginal rate (20%, 40%, or 45%). National Insurance contributions, however, are assessed on gross earnings before pension deductions.</p>
+
+      <h3>4. Statutory Payroll Deductions for UK Teachers</h3>
+      <p>Once pension contributions are taken, remaining earnings are assessed under standard UK statutory tax rules:</p>
+
+      <ul>
+        <li>
+          <strong>PAYE Income Tax:</strong> Standard Personal Allowance (£12,570) is tax-free. Earnings above this threshold up to £50,270 are taxed at the Basic Rate (20%). Income between £50,271 and £125,140 is taxed at the Higher Rate (40%), while earnings over £125,140 are taxed at the Additional Rate (45%).
+        </li>
+        <li>
+          <strong>Class 1 National Insurance:</strong> Primary employee contributions are charged at <strong>8%</strong> on gross earnings between £12,570 and £50,270 per year. Any gross earnings exceeding £50,270 incur an Upper Rate charge of <strong>2%</strong>.
+        </li>
+        <li>
+          <strong>Student Loan Repayments:</strong> Teacher trainees and qualified staff with student loans pay deductions directly through payroll based on their plan type:
+          <ul>
+            <li><strong>Plan 1:</strong> 9% on gross earnings above £24,990/year.</li>
+            <li><strong>Plan 2:</strong> 9% on gross earnings above £27,295/year.</li>
+            <li><strong>Plan 5:</strong> 9% on gross earnings above £25,000/year.</li>
+            <li><strong>Postgraduate Loan:</strong> 6% on gross earnings above £21,000/year.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>5. In-Depth Step-by-Step Teacher Pay Calculation Examples</h3>
+      <p>The following detailed examples illustrate how these deductions combine to form net monthly pay for teachers across different career stages.</p>
+
+      <h4>Case Study 1: Main Pay Scale Teacher (Rest of England - M3)</h4>
+      <p>A mid-scale primary school teacher outside London earning base salary without additional TLRs:</p>
+
+      <ul>
+        <li><strong>Base Annual Gross Pay:</strong> £35,700.00</li>
+        <li><strong>Student Loan:</strong> Plan 2</li>
+      </ul>
+
+      <p><strong>Step 1: Calculate TPS Pension Deduction</strong><br>
+      Gross earnings of £35,700.00 place this teacher in TPS Tier 2 (8.6%).<br>
+      £35,700.00 × 8.6% = <strong>£3,070.20</strong> annual pension contribution (£255.85 / month).</p>
+
+      <p><strong>Step 2: Calculate Taxable Gross Pay (Net Pay)</strong><br>
+      £35,700.00 − £3,070.20 = <strong>£32,629.80</strong> taxable income.</p>
+
+      <p><strong>Step 3: Calculate PAYE Income Tax</strong><br>
+      Taxable amount over Personal Allowance (£12,570.00): £32,629.80 − £12,570.00 = £20,059.80.<br>
+      20% Basic Rate Tax: £20,059.80 × 20% = <strong>£4,011.96</strong> annual tax (£334.33 / month).</p>
+
+      <p><strong>Step 4: Calculate National Insurance (Class 1)</strong><br>
+      Gross income over NI threshold (£12,570.00): £35,700.00 − £12,570.00 = £23,130.00.<br>
+      8% NI Rate: £23,130.00 × 8% = <strong>£1,850.40</strong> annual NI (£154.20 / month).</p>
+
+      <p><strong>Step 5: Calculate Student Loan (Plan 2)</strong><br>
+      Gross income over threshold (£27,295.00): £35,700.00 − £27,295.00 = £8,405.00.<br>
+      9% Repayment Rate: £8,405.00 × 9% = <strong>£756.45</strong> annual repayment (£63.04 / month).</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Pay Element / Deduction Item</th>
+            <th>Annual Figure (£)</th>
+            <th>Monthly Figure (£)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Base Salary (M3 Rest of England)</td>
+            <td>£35,700.00</td>
+            <td>£2,975.00</td>
+          </tr>
+          <tr>
+            <td>Teachers' Pension (8.6%)</td>
+            <td>−£3,070.20</td>
+            <td>−£255.85</td>
+          </tr>
+          <tr>
+            <td>PAYE Income Tax</td>
+            <td>−£4,011.96</td>
+            <td>−£334.33</td>
+          </tr>
+          <tr>
+            <td>Class 1 National Insurance</td>
+            <td>−£1,850.40</td>
+            <td>−£154.20</td>
+          </tr>
+          <tr>
+            <td>Student Loan (Plan 2)</td>
+            <td>−£756.45</td>
+            <td>−£63.04</td>
+          </tr>
+          <tr>
+            <td><strong>Net Take-Home Pay</strong></td>
+            <td><strong>£26,010.99</strong></td>
+            <td><strong>£2,167.58</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>Case Study 2: Upper Pay Scale Teacher with TLR2 (Inner London - UPS1 + TLR2b)</h4>
+      <p>An experienced secondary Head of Department in Inner London on Upper Scale 1 with a TLR2b responsibility allowance:</p>
+
+      <ul>
+        <li><strong>Base UPS1 Inner London Pay:</strong> £53,643.00</li>
+        <li><strong>TLR2b Allowance:</strong> £5,500.00</li>
+        <li><strong>Total Gross Pensionable Pay:</strong> £59,143.00</li>
+        <li><strong>Student Loan:</strong> None</li>
+      </ul>
+
+      <p><strong>Step 1: Calculate TPS Pension Deduction</strong><br>
+      Gross earnings of £59,143.00 place this teacher in TPS Tier 4 (10.2%).<br>
+      £59,143.00 × 10.2% = <strong>£6,032.59</strong> annual pension contribution (£502.72 / month).</p>
+
+      <p><strong>Step 2: Calculate Taxable Gross Pay</strong><br>
+      £59,143.00 − £6,032.59 = <strong>£53,110.41</strong> taxable income.</p>
+
+      <p><strong>Step 3: Calculate PAYE Income Tax (Spanning Basic & Higher Rate Bands)</strong><br>
+      Taxable amount over Personal Allowance: £53,110.41 − £12,570.00 = £40,540.41.<br>
+      Basic Rate (20%) on income up to £50,270 limit (£37,700 taxable) = £7,540.00.<br>
+      Higher Rate (40%) on income above £50,270 boundary (£53,110.41 − £50,270.00 = £2,840.41) = £1,136.16.<br>
+      Total PAYE Tax = £7,540.00 + £1,136.16 = <strong>£8,676.16</strong> annual tax (£723.01 / month).</p>
+
+      <p><strong>Step 4: Calculate Class 1 National Insurance</strong><br>
+      Main NI Band (8%): (£50,270.00 − £12,570.00) × 8% = £37,700.00 × 8% = £3,016.00.<br>
+      Upper NI Band (2%): (£59,143.00 − £50,270.00) × 2% = £8,873.00 × 2% = £177.46.<br>
+      Total National Insurance = £3,016.00 + £177.46 = <strong>£3,193.46</strong> annual NI (£266.12 / month).</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Pay Element / Deduction Item</th>
+            <th>Annual Figure (£)</th>
+            <th>Monthly Figure (£)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Base Pay (UPS1 Inner London)</td>
+            <td>£53,643.00</td>
+            <td>£4,470.25</td>
+          </tr>
+          <tr>
+            <td>TLR2b Responsibility Allowance</td>
+            <td>£5,500.00</td>
+            <td>£458.33</td>
+          </tr>
+          <tr>
+            <td><strong>Total Gross Salary</strong></td>
+            <td><strong>£59,143.00</strong></td>
+            <td><strong>£4,928.58</strong></td>
+          </tr>
+          <tr>
+            <td>Teachers' Pension (10.2%)</td>
+            <td>−£6,032.59</td>
+            <td>−£502.72</td>
+          </tr>
+          <tr>
+            <td>PAYE Income Tax</td>
+            <td>−£8,676.16</td>
+            <td>−£723.01</td>
+          </tr>
+          <tr>
+            <td>Class 1 National Insurance</td>
+            <td>−£3,193.46</td>
+            <td>−£266.12</td>
+          </tr>
+          <tr>
+            <td><strong>Net Take-Home Pay</strong></td>
+            <td><strong>£41,240.79</strong></td>
+            <td><strong>£3,436.73</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>6. Additional Payroll Factors and Professional Expenses</h3>
+      <p>Teachers can take advantage of specific professional allowances and tax relief options to optimize net pay:</p>
+
+      <ul>
+        <li>
+          <strong>Tax Relief on Professional Union Subscriptions:</strong> Subscriptions paid to recognized educational unions (such as NEU, NASUWT, NAHT, or ASCL) and professional bodies (such as the Chartered College of Teaching) qualify for annual tax relief under Section 344 of the Income Tax Act 2003. You can claim back income tax on these dues directly through HMRC.
+        </li>
+        <li>
+          <strong>Student Loan Student Teacher Retention Payments:</strong> Early career teachers in qualifying subject disciplines (such as Mathematics, Physics, Chemistry, and Computing) operating in high-priority local authorities can receive targeted retention incentives and bursaries directly from the DfE.
+        </li>
+        <li>
+          <strong>Salary Sacrifice & Cycle to Work Schemes:</strong> Many local education authorities and academy trusts offer cycle-to-work schemes and tech purchase plans. Sacrificing contractual salary lowers your tax, National Insurance, and TPS pension deductions, reducing your net tax burden.
+        </li>
+      </ul>
+    </article>
+
+    <!-- Specialized Hub Navigation Section -->
+    <section class="hub-section">
+      <h2>Specialized UK Tax & Salary Calculators</h2>
+      <div class="grid">
+        <a href="/scotland-take-home-pay-calculator" class="card">
+          <h3>Scottish Tax Calculator</h3>
+          <p>Calculations using Scottish Income Tax bands and thresholds.</p>
+        </a>
+        <a href="/nhs-take-home-pay-calculator" class="card">
+          <h3>NHS Pay Calculator</h3>
+          <p>Accounts for Agenda for Change bands and NHS pension tiers.</p>
+        </a>
+        <a href="/teacher-take-home-pay-calculator" class="card">
+          <h3>Teacher Pay Calculator</h3>
+          <p>Calculates salary after Teachers' Pension Scheme (TPS) deductions.</p>
+        </a>
+        <a href="/monthly-take-home-pay-calculator" class="card">
+          <h3>Monthly Pay Calculator</h3>
+          <p>Detailed monthly and weekly take-home pay budgeting breakdown.</p>
+        </a>
+        <a href="/london-take-home-pay-calculator" class="card">
+          <h3>London Weighting Calculator</h3>
+          <p>Includes High Cost Area Supplements for London commuters.</p>
+        </a>
+        <a href="/take-home-pay-calculator-2025-2026" class="card">
+          <h3>2025/2026 Tax Year Tool</h3>
+          <p>Compare previous tax years against current income tax rates.</p>
+        </a>
+        <a href="/ni-take-home-pay-calculator" class="card">
+          <h3>Northern Ireland Calculator</h3>
+          <p>Take-home pay estimates tailored for Northern Ireland employees.</p>
+        </a>
+        <a href="/ireland-take-home-pay-calculator" class="card">
+          <h3>Republic of Ireland Calculator</h3>
+          <p>Includes USC, PRSI, and Irish Tax Credit calculations.</p>
+        </a>
+        <a href="/student-loan-take-home-pay-calculator" class="card">
+          <h3>Student Loan Calculator</h3>
+          <p>Calculates deductions across Plan 1, Plan 2, Plan 5 & Postgrad loans.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+
+      <details class="faq-item">
+        <summary>How is my teacher take-home pay calculated in the UK?</summary>
+        <p>Your net teaching salary is calculated by taking your base scale pay (plus any TLR, SEN, or London weighting allowances) and subtracting Teachers' Pension Scheme (TPS) tiered contributions, PAYE Income Tax, Class 1 National Insurance, and applicable Student Loan repayments.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What are the Teachers' Pension Scheme (TPS) contribution rates for 2026/2027?</summary>
+        <p>TPS employee contribution rates range from <strong>7.4%</strong> for pensionable earnings up to £34,289, up to <strong>11.7%</strong> for earnings of £98,921 and above. Contribution tiers are assessed on your actual gross earnings.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Do Teachers' Pension contributions reduce my Income Tax?</summary>
+        <p>Yes. Teachers' Pension contributions are processed under a Net Pay Arrangement, meaning contributions are deducted from gross pay <em>before</em> PAYE Income Tax is calculated. This grants immediate tax relief at your highest marginal tax rate.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How does working part-time affect my Teachers' Pension contribution tier?</summary>
+        <p>TPS member contribution tiers are calculated based on your <em>actual gross pensionable earnings</em> rather than your full-time equivalent (FTE) salary. Part-time teachers pay the contribution percentage matching their real annual earnings.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Are TLR and SEN allowances pensionable for UK teachers?</summary>
+        <p>Yes. Teaching and Learning Responsibility (TLR) payments and Special Educational Needs (SEN) allowances are treated as regular pensionable pay under TPS regulations, subject to pension tier deductions, tax, and National Insurance.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What is the difference between Inner, Outer, and Fringe London teacher pay scales?</summary>
+        <p>To offset higher regional living costs, teacher pay scales in London and surrounding areas feature elevated base salaries. For example, entry M1 base pay is £31,650 for Rest of England, £33,000 for Fringe, £36,000 for Outer London, and £38,748 for Inner London.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can teachers claim tax back on NEU, NASUWT, or other union fees?</summary>
+        <p>Yes. Subscriptions paid to recognized professional unions (such as NEU, NASUWT, NAHT, or ASCL) and educational bodies qualify for income tax relief under Section 344. You can claim tax refunds directly through HMRC.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How are student loans deducted from a teacher's monthly pay?</summary>
+        <p>Student loan repayments are deducted directly through payroll as a percentage of gross pay above specified plan thresholds (e.g., 9% over £27,295 for Plan 2, or 6% over £21,000 for Postgraduate loans).</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can I opt out of the Teachers' Pension Scheme (TPS)?</summary>
+        <p>Yes, teachers can opt out of the TPS at any time. While opting out increases your immediate net monthly pay, you lose immediate tax relief, employer pension contributions, and accrued career-average defined benefits.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How does progression from the Main Pay Scale (MPS) to Upper Pay Scale (UPS) work?</summary>
+        <p>Teachers who reach the top of the Main Pay Scale (M6) can apply to move to the Upper Pay Scale through a performance assessment. Successful progression to UPS1 increases base pay and sets higher professional performance standards.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How does supply teaching pay and pension work?</summary>
+        <p>Supply teachers employed directly by local authorities or school trusts are paid a daily or hourly rate based on standard scale points and are eligible for TPS membership. Agency supply teachers are paid via agency payrolls or umbrella companies, which may utilize different workplace pension schemes.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How are National Insurance contributions calculated for teachers?</summary>
+        <p>Class 1 National Insurance is charged on gross earnings before pension deductions. Teachers pay 8% on gross earnings between £12,570 and £50,270 per year, and 2% on earnings exceeding £50,270.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 TakeHomePayCalc.me — Accurate UK Net Salary & Income Tax Calculations</p>
+  </footer>
+
+  <script>
+    // Navigation Toggle Logic
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    // Preset Pay Scale Dropdown Handler
+    function updateSalaryFromPreset() {
+      const selectedValue = document.getElementById('pay-region').value;
+      if (selectedValue !== 'custom') {
+        document.getElementById('salary').value = selectedValue;
+        calculateTeacherPay();
+      }
+    }
+
+    // Teachers' Pension Scheme (TPS) Tier Rate Lookup
+    function getTPSTierRate(grossSalary) {
+      if (grossSalary <= 34289) return 0.074;
+      if (grossSalary <= 46220) return 0.086;
+      if (grossSalary <= 54785) return 0.096;
+      if (grossSalary <= 72560) return 0.102;
+      if (grossSalary <= 98920) return 0.113;
+      return 0.117;
+    }
+
+    // Core Teacher Salary Engine Calculation Logic
+    function calculateTeacherPay() {
+      const gross = parseFloat(document.getElementById('salary').value) || 0;
+      const loanPlan = document.getElementById('student-loan').value;
+
+      // TPS Pension Calculation
+      const pensionRate = getTPSTierRate(gross);
+      const pensionDeduction = gross * pensionRate;
+
+      // Taxable Income under Net Pay Arrangement
+      const personalAllowance = 12570;
+      const basicRateThreshold = 50270;
+      const taxableGross = Math.max(0, gross - pensionDeduction);
+
+      // PAYE Income Tax Calculation
+      let tax = 0;
+      if (taxableGross > personalAllowance) {
+        if (taxableGross <= basicRateThreshold) {
+          tax = (taxableGross - personalAllowance) * 0.20;
+        } else {
+          tax = ((basicRateThreshold - personalAllowance) * 0.20) + ((taxableGross - basicRateThreshold) * 0.40);
+        }
+      }
+
+      // Class 1 National Insurance Calculation (on gross before pension)
+      let ni = 0;
+      const niThreshold = 12570;
+      const niUpperLimit = 50270;
+      if (gross > niThreshold) {
+        if (gross <= niUpperLimit) {
+          ni = (gross - niThreshold) * 0.08;
+        } else {
+          ni = ((niUpperLimit - niThreshold) * 0.08) + ((gross - niUpperLimit) * 0.02);
+        }
+      }
+
+      // Student Loan Deduction Calculations
+      let studentLoanDeduction = 0;
+
+      if (loanPlan === 'plan1') {
+        const threshold = 24990;
+        if (gross > threshold) studentLoanDeduction = (gross - threshold) * 0.09;
+      } else if (loanPlan === 'plan2') {
+        const threshold = 27295;
+        if (gross > threshold) studentLoanDeduction = (gross - threshold) * 0.09;
+      } else if (loanPlan === 'plan5') {
+        const threshold = 25000;
+        if (gross > threshold) studentLoanDeduction = (gross - threshold) * 0.09;
+      } else if (loanPlan === 'postgrad') {
+        const threshold = 21000;
+        if (gross > threshold) studentLoanDeduction = (gross - threshold) * 0.06;
+      } else if (loanPlan === 'plan2_postgrad') {
+        let ugLoan = 0;
+        let pgLoan = 0;
+        if (gross > 27295) ugLoan = (gross - 27295) * 0.09;
+        if (gross > 21000) pgLoan = (gross - 21000) * 0.06;
+        studentLoanDeduction = ugLoan + pgLoan;
+      }
+
+      // Final Net Salary Summary
+      const net = gross - tax - ni - pensionDeduction - studentLoanDeduction;
+
+      document.getElementById('gross-year').innerText = '£' + Math.round(gross).toLocaleString();
+      document.getElementById('gross-month').innerText = '£' + Math.round(gross / 12).toLocaleString();
+
+      document.getElementById('pension-year').innerText = '£' + Math.round(pensionDeduction).toLocaleString();
+      document.getElementById('pension-month').innerText = '£' + Math.round(pensionDeduction / 12).toLocaleString();
+
+      document.getElementById('tax-year-val').innerText = '£' + Math.round(tax).toLocaleString();
+      document.getElementById('tax-month-val').innerText = '£' + Math.round(tax / 12).toLocaleString();
+
+      document.getElementById('ni-year').innerText = '£' + Math.round(ni).toLocaleString();
+      document.getElementById('ni-month').innerText = '£' + Math.round(ni / 12).toLocaleString();
+
+      document.getElementById('loan-year').innerText = '£' + Math.round(studentLoanDeduction).toLocaleString();
+      document.getElementById('loan-month').innerText = '£' + Math.round(studentLoanDeduction / 12).toLocaleString();
+
+      document.getElementById('net-year').innerText = '£' + Math.round(net).toLocaleString();
+      document.getElementById('net-month').innerText = '£' + Math.round(net / 12).toLocaleString();
+    }
+
+    // Initial Calculation Trigger
+    calculateTeacherPay();
+  </script>
+</body>
+</html>

@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary Meta Tags -->
+  <title>Take-Home Pay Calculator 2025/2026 | UK Net Salary & Tax Calculator</title>
+  <meta name="title" content="Take-Home Pay Calculator 2025/2026 | UK Net Salary & Tax Calculator">
+  <meta name="description" content="Calculate your exact UK take-home pay, PAYE income tax, National Insurance, and pension contributions for the 2025/2026 tax year instantly.">
+  <meta name="keywords" content="take home pay calculator 2025, uk take home pay calculator 2025, uk take home pay calculator 2026, net pay calculator 2025/2026, income tax calculator 2025">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="TakeHomePayCalc.me">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://takehomepaycalc.me/take-home-pay-calculator-2025-2026">
+  <meta property="og:title" content="Take-Home Pay Calculator 2025/2026 | UK Net Salary Calculator">
+  <meta property="og:description" content="Calculate your exact UK net salary after PAYE tax, NI, and pension deductions for the 2025/2026 tax year.">
+  <meta property="og:image" content="https://takehomepaycalc.me/assets/logo.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://takehomepaycalc.me/take-home-pay-calculator-2025-2026">
+  <meta name="twitter:title" content="Take-Home Pay Calculator 2025/2026">
+  <meta name="twitter:description" content="Calculate your exact UK take-home pay for the 2025/2026 tax year.">
+  <meta name="twitter:image" content="https://takehomepaycalc.me/assets/logo.png">
+
+  <!-- Favicon & Icons -->
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+
+  <!-- Structured Data: WebApplication & FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://takehomepaycalc.me/take-home-pay-calculator-2025-2026#webapp",
+        "url": "https://takehomepaycalc.me/take-home-pay-calculator-2025-2026",
+        "name": "UK Take-Home Pay Calculator 2025/2026",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript",
+        "description": "Calculate net salary, PAYE income tax, Class 1 National Insurance, and pension deductions for the 2025/2026 tax year."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://takehomepaycalc.me/take-home-pay-calculator-2025-2026#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://takehomepaycalc.me/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Take-Home Pay Calculator 2025/2026",
+            "item": "https://takehomepaycalc.me/take-home-pay-calculator-2025-2026"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://takehomepaycalc.me/take-home-pay-calculator-2025-2026#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What was the UK Personal Allowance for 2025/2026?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The standard UK Personal Allowance for the 2025/2026 tax year remained frozen at £12,570."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does 2025/2026 take-home pay compare to 2026/2027?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Core Income Tax bands and Class 1 National Insurance rates (8% main rate) were identical between 2025/2026 and 2026/2027 across England, Wales, and Northern Ireland, though student loan repayment thresholds shifted."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+ <style>
+  :root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --bg: #f8fafc;
+    --card-bg: #ffffff;
+    --text: #0f172a;
+    --text-muted: #475569;
+    --border: #e2e8f0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
+
+  /* Header & Navigation */
+  header { background: var(--card-bg); border-bottom: 1px solid var(--border); padding: 1rem 2rem; position: relative; }
+  nav { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+  
+  .logo-container { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; }
+  .logo-img { width: 38px; height: 38px; object-fit: contain; }
+  .logo-text { font-size: 1.25rem; font-weight: 700; color: var(--primary); }
+
+  .nav-menu { display: flex; gap: 1rem; list-style: none; }
+  .nav-menu a { text-decoration: none; color: var(--text-muted); font-size: 0.9rem; font-weight: 500; }
+  .nav-menu a:hover { color: var(--primary); }
+
+  .menu-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text); }
+
+  /* Main Container */
+  main { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
+  .hero-title { text-align: center; margin-bottom: 2rem; }
+  .hero-title h1 { font-size: 2.2rem; color: var(--text); margin-bottom: 0.5rem; }
+  .hero-title p { color: var(--text-muted); font-size: 1.05rem; }
+
+  /* Calculator Layout */
+  .calc-container { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; background: var(--card-bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+  
+  .form-group { margin-bottom: 1.2rem; }
+  .form-group label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem; }
+  .form-group input, .form-group select { width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 6px; font-size: 1rem; }
+  .form-group input:focus, .form-group select:focus { outline: 2px solid var(--primary); border-color: transparent; }
+
+  /* Results Table */
+  .results-card { background: var(--bg); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border); }
+  .results-card h2 { font-size: 1.2rem; margin-bottom: 1rem; }
+  .results-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; }
+  .results-table th, .results-table td { padding: 0.6rem 0; border-bottom: 1px solid var(--border); }
+  .results-table tr.highlight td { font-weight: 700; color: var(--primary-dark); font-size: 1.05rem; border-bottom: none; }
+
+  /* Expanded 2500-Word Content Typography & Formatting */
+  .content-section { 
+    margin-top: 3.5rem; 
+    background: var(--card-bg); 
+    padding: 2.5rem; 
+    border-radius: 12px; 
+    border: 1px solid var(--border); 
+  }
+  
+  .content-section h2 { font-size: 1.8rem; margin-bottom: 1.2rem; color: var(--text); border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1.3rem; margin: 2rem 0 0.8rem; color: var(--primary-dark); }
+  .content-section h4 { font-size: 1.1rem; margin: 1.2rem 0 0.5rem; color: var(--text); }
+  .content-section p { margin-bottom: 1.2rem; color: var(--text-muted); font-size: 1rem; line-height: 1.7; }
+  
+  .content-section ul, .content-section ol { margin: 0 0 1.5rem 1.5rem; color: var(--text-muted); }
+  .content-section li { margin-bottom: 0.5rem; line-height: 1.6; }
+
+  /* Embedded In-Content Data Tables */
+  .content-section table { width: 100%; border-collapse: collapse; margin: 1.5rem 0 2rem; background: var(--bg); border-radius: 6px; overflow: hidden; border: 1px solid var(--border); }
+  .content-section th, .content-section td { padding: 0.8rem 1rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.95rem; }
+  .content-section th { background: #edf2f7; font-weight: 600; color: var(--text); }
+  .content-section tr:last-child td { border-bottom: none; }
+
+  /* Hub Section */
+  .hub-section, .faq-section { margin-top: 3.5rem; }
+  .hub-section h2, .faq-section h2 { font-size: 1.5rem; margin-bottom: 1.5rem; text-align: center; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.2rem; }
+  .card { background: var(--card-bg); border: 1px solid var(--border); padding: 1.25rem; border-radius: 8px; text-decoration: none; color: inherit; transition: transform 0.1s, border-color 0.1s; }
+  .card:hover { transform: translateY(-2px); border-color: var(--primary); }
+  .card h3 { font-size: 1.1rem; color: var(--primary); margin-bottom: 0.3rem; }
+  .card p { font-size: 0.85rem; color: var(--text-muted); }
+
+  /* FAQ Accordion Details */
+  .faq-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 6px; padding: 1rem; margin-bottom: 0.8rem; }
+  .faq-item summary { font-weight: 600; cursor: pointer; color: var(--text); }
+  .faq-item p { margin-top: 0.5rem; color: var(--text-muted); font-size: 0.95rem; }
+
+  /* Footer */
+  footer { text-align: center; padding: 2rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 4rem; }
+
+  /* Mobile Responsive Table and Menu Styles */
+  @media (max-width: 768px) {
+    header { padding: 1rem; }
+    .calc-container { grid-template-columns: 1fr; }
+    .menu-toggle { display: block; }
+    .nav-menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0; right: 0;
+      background: var(--card-bg);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem;
+      gap: 0.8rem;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    }
+    .nav-menu.active { display: flex; }
+    .content-section { padding: 1.2rem; }
+    .content-section table { display: block; overflow-x: auto; white-space: nowrap; }
+  }
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T3E3V013H2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-T3E3V013H2');
+</script>
+</head>
+<body>
+
+  <header>
+    <nav aria-label="Main Navigation">
+      <a href="/" class="logo-container">
+        <img src="assets/logo.png" alt="TakeHomePayCalc Logo" class="logo-img" width="38" height="38">
+        <span class="logo-text">Takehomepaycalc</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">☰</button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="/scotland-take-home-pay-calculator">Scotland</a></li>
+        <li><a href="/nhs-take-home-pay-calculator">NHS</a></li>
+        <li><a href="/teacher-take-home-pay-calculator">Teachers</a></li>
+        <li><a href="/monthly-take-home-pay-calculator">Monthly</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-title">
+      <h1>UK Take-Home Pay Calculator (2025/2026)</h1>
+      <p>Accurately calculate your net salary, PAYE Income Tax, Class 1 National Insurance, and pension deductions for the 2025/2026 tax year.</p>
+    </section>
+
+    <!-- Interactive App Container -->
+    <section class="calc-container" aria-label="Salary Calculator Tool">
+      <div class="calc-inputs">
+        <div class="form-group">
+          <label for="salary">Gross Annual Salary (£)</label>
+          <input type="number" id="salary" value="35000" placeholder="e.g. 35000" oninput="calculatePay()" aria-required="true">
+        </div>
+        <div class="form-group">
+          <label for="tax-year">Tax Year</label>
+          <select id="tax-year" onchange="calculatePay()">
+            <option value="2025" selected>2025 / 2026</option>
+            <option value="2026">2026 / 2027</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="pension">Workplace Pension (%)</label>
+          <input type="number" id="pension" value="5" min="0" max="100" oninput="calculatePay()">
+        </div>
+      </div>
+
+      <div class="results-card" aria-live="polite">
+        <h2>Your 2025/2026 Net Salary Breakdown</h2>
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th scope="col">Deduction</th>
+              <th scope="col">Yearly</th>
+              <th scope="col">Monthly</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Gross Pay</td>
+              <td id="gross-year">£0</td>
+              <td id="gross-month">£0</td>
+            </tr>
+            <tr>
+              <td>Income Tax (PAYE)</td>
+              <td id="tax-year-val">£0</td>
+              <td id="tax-month-val">£0</td>
+            </tr>
+            <tr>
+              <td>National Insurance</td>
+              <td id="ni-year">£0</td>
+              <td id="ni-month">£0</td>
+            </tr>
+            <tr>
+              <td>Pension Deduction</td>
+              <td id="pension-year">£0</td>
+              <td id="pension-month">£0</td>
+            </tr>
+            <tr class="highlight">
+              <td>Net Take-Home Pay</td>
+              <td id="net-year">£0</td>
+              <td id="net-month">£0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SEO Content Area -->
+    <article class="content-section">
+      <h2>Complete Breakdown of UK Salary, Income Tax, and Take-Home Pay (2025/2026)</h2>
+      <p>Navigating UK taxation requires a clear understanding of how gross earnings transition into net take-home pay. For the 2025/2026 tax year (running from 6 April 2025 to 5 April 2026), employees across England, Wales, Scotland, and Northern Ireland saw their gross salaries subject to statutory deductions levied by His Majesty’s Revenue and Customs (HMRC). Using a dedicated <strong>take home pay calculator 2025</strong> allows you to evaluate how much money actually lands in your bank account after all payroll taxes, pensions, and student loan obligations are settled.</p>
+      <p>Whether you are comparing past earnings, filing Self Assessment adjustments, or projecting future income transitions using a <strong>uk take home pay calculator 2025</strong> alongside a <strong>uk take home pay calculator 2026</strong>, understanding the exact statutory thresholds and deduction mechanics is critical. This guide provides a comprehensive, 2,500+ word analysis of the UK tax system during the 2025/2026 tax year, detailing every layer of taxation that affects your monthly salary.</p>
+
+      <h3>1. The Pay As You Earn (PAYE) System Explained</h3>
+      <p>In the United Kingdom, salaried employees rarely pay their income taxes directly via manual transfers at the end of the year. Instead, HMRC operates the Pay As You Earn (PAYE) framework. Under PAYE, your employer acts as an intermediary collector: every pay cycle (monthly, weekly, or four-weekly), payroll software automatically calculates your tax-free allowances, applies the relevant Income Tax and National Insurance rates, and remits these sums directly to HMRC before your net salary is disbursed.</p>
+      <p>PAYE is inherently cumulative for most workers. Each pay period accounts for the total earnings and total tax allowances accumulated since the start of the tax year on April 6th. This cumulative structure ensures that if your income fluctuates—such as receiving an unexpected bonus or taking unpaid leave—your tax liability automatically re-balances across subsequent paychecks, preventing sudden over-taxation or huge end-of-year tax debts.</p>
+
+      <h3>2. Tax Codes in the 2025/2026 Tax Year</h3>
+      <p>Your tax code is a shorthand alphanumeric code sent by HMRC to your employer to specify how much tax-free income you receive in a given pay period. The baseline standard tax code for single-job employees in 2025/2026 was <strong>1257L</strong>.</p>
+      <ul>
+        <li><strong>1257:</strong> Represents the tax-free Personal Allowance of £12,570 divided by 10.</li>
+        <li><strong>L:</strong> Signifies that you are entitled to the standard Personal Allowance for the tax year.</li>
+      </ul>
+      <p>Variations in tax codes signal specific taxpayer circumstances:</p>
+      <ul>
+        <li><strong>S Prefix (e.g., S1257L):</strong> Indicates that your main residence is in Scotland, subjecting your earned income to devolved Scottish Income Tax rates.</li>
+        <li><strong>C Prefix (e.g., C1257L):</strong> Applies to Welsh taxpayers under Welsh Income Tax rules (which currently match English rates).</li>
+        <li><strong>BR:</strong> Stands for Basic Rate. All income from this employer is taxed at 20% with zero tax-free allowance applied—common for second jobs.</li>
+        <li><strong>D0 / D1:</strong> Higher Rate (40%) or Additional Rate (45%) applied to all income without allowance.</li>
+        <li><strong>K Codes:</strong> Used when untaxed income or taxable benefits in kind exceed your Personal Allowance, resulting in negative tax-free allowance where additional tax must be withheld.</li>
+      </ul>
+
+      <h3>3. The Personal Allowance and High Earner Tapering</h3>
+      <p>The standard Personal Allowance for 2025/2026 was fixed at **£12,570**. Earnings up to this threshold are completely free from Income Tax. However, high earners are subject to a statutory clawback mechanism known as Personal Allowance Tapering.</p>
+      <p>Once your Adjusted Net Income exceeds **£100,000**, your Personal Allowance is reduced by £1 for every £2 earned above £100,000. Consequently, by the time your income reaches **£125,140**, your tax-free Personal Allowance is completely reduced to £0. This tapering creates a famous tax anomaly known as the <strong>60% Effective Marginal Tax Rate</strong> between £100,000 and £125,140 (40% Higher Rate Income Tax + 20% tax effect from the loss of allowance, before accounting for National Insurance or student loans).</p>
+
+      <h3>4. Income Tax Bands and Rates for 2025/2026 (England, Wales, & Northern Ireland)</h3>
+      <p>For taxpayers in England, Wales, and Northern Ireland, Income Tax in 2025/2026 was levied across three main taxable brackets once earnings passed the Personal Allowance threshold:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Tax Band</th>
+            <th>Taxable Income Bracket (2025/2026)</th>
+            <th>Tax Rate</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Personal Allowance</td>
+            <td>Up to £12,570</td>
+            <td>0%</td>
+          </tr>
+          <tr>
+            <td>Basic Rate</td>
+            <td>£12,571 to £50,270</td>
+            <td>20%</td>
+          </tr>
+          <tr>
+            <td>Higher Rate</td>
+            <td>£50,271 to £125,140</td>
+            <td>40%</td>
+          </tr>
+          <tr>
+            <td>Additional Rate</td>
+            <td>Over £125,140</td>
+            <td>45%</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Because the UK system is progressive, moving into a higher tax bracket only taxes the portion of income within that specific band. For example, an individual earning £60,000 in 2025/2026 paid 0% on the first £12,570, 20% on the portion between £12,571 and £50,270 (£7,540 tax), and 40% only on the remaining £9,730 above £50,270 (£3,892 tax).</p>
+
+      <h3>5. Devolved Scottish Income Tax Structure (2025/2026)</h3>
+      <p>Taxpayers resident in Scotland experienced a multi-tiered rate structure set by the Scottish Parliament. The Scottish framework utilizes six tax rates to create greater progressivity:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Scottish Tax Band</th>
+            <th>Taxable Income Range (2025/2026)</th>
+            <th>Scottish Rate</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Personal Allowance</td>
+            <td>Up to £12,570</td>
+            <td>0%</td>
+          </tr>
+          <tr>
+            <td>Starter Rate</td>
+            <td>£12,571 to £14,876</td>
+            <td>19%</td>
+          </tr>
+          <tr>
+            <td>Basic Rate</td>
+            <td>£14,877 to £26,561</td>
+            <td>20%</td>
+          </tr>
+          <tr>
+            <td>Intermediate Rate</td>
+            <td>£26,562 to £43,662</td>
+            <td>21%</td>
+          </tr>
+          <tr>
+            <td>Higher Rate</td>
+            <td>£43,663 to £75,000</td>
+            <td>42%</td>
+          </tr>
+          <tr>
+            <td>Advanced Rate</td>
+            <td>£75,001 to £125,140</td>
+            <td>45%</td>
+          </tr>
+          <tr>
+            <td>Top Rate</td>
+            <td>Over £125,140</td>
+            <td>48%</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Under this system, Scottish earners on lower salaries retained slightly more net pay compared to English taxpayers, whereas those earning above £28,850 faced higher overall tax liabilities, expanding further once earnings crossed the £43,663 Higher Rate threshold.</p>
+
+      <h3>6. Employee Class 1 National Insurance Contributions (NICs)</h3>
+      <p>National Insurance Contributions (NICs) fund essential state benefits, including the State Pension and National Health Service (NHS). Unlike Income Tax, National Insurance is calculated on a per-pay-period basis (non-cumulative) and applies directly to gross earnings without deduction for non-salary sacrifice pension schemes.</p>
+      <p>In 2025/2026, employee Class 1 NIC rates stood as follows:</p>
+      <ul>
+        <li><strong>Primary Threshold (Up to £12,570/yr or £1,048/mo):</strong> 0% National Insurance.</li>
+        <li><strong>Main Rate (£12,570 to £50,270/yr):</strong> Earnings between the Primary Threshold and Upper Earnings Limit (UEL) are taxed at <strong>8%</strong>.</li>
+        <li><strong>Upper Rate (Above £50,270/yr or £4,189/mo):</strong> Earnings above £50,270 are taxed at <strong>2%</strong>.</li>
+      </ul>
+
+      <h3>7. Comparing Tax Years: 2025/2026 vs. 2026/2027</h3>
+      <p>A common inquiry among UK workers using a <strong>uk take home pay calculator 2025</strong> or a <strong>uk take home pay calculator 2026</strong> is how take-home pay shifts between consecutive tax years. Due to government policy freezing key Income Tax thresholds (fiscal drag), core tax rates and allowances remained unified across 2025/2026 and 2026/2027.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Tax Parameter</th>
+            <th>2025/2026 Tax Year</th>
+            <th>2026/2027 Tax Year</th>
+            <th>Annual Change</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Personal Allowance</td>
+            <td>£12,570</td>
+            <td>£12,570</td>
+            <td>No change (£0)</td>
+          </tr>
+          <tr>
+            <td>Basic Rate Threshold (rUK)</td>
+            <td>£50,270</td>
+            <td>£50,270</td>
+            <td>No change (£0)</td>
+          </tr>
+          <tr>
+            <td>Class 1 NI Main Rate</td>
+            <td>8%</td>
+            <td>8%</td>
+            <td>No change (0%)</td>
+          </tr>
+          <tr>
+            <td>Class 1 NI Upper Rate</td>
+            <td>2%</td>
+            <td>2%</td>
+            <td>No change (0%)</td>
+          </tr>
+          <tr>
+            <td>Plan 2 Student Loan Threshold</td>
+            <td>£27,295</td>
+            <td>£28,470 (Indexed)</td>
+            <td>+£1,175 threshold increase</td>
+          </tr>
+          <tr>
+            <td>Plan 4 Student Loan Threshold</td>
+            <td>£31,395</td>
+            <td>£32,745 (Indexed)</td>
+            <td>+£1,350 threshold increase</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>While base taxes remained steady, threshold adjustments for student loan repayments between tax years mean that borrowers in 2026/2027 retain slightly more net income compared to 2025/2026 for identical gross salaries.</p>
+
+      <h3>8. Workplace Pension Mechanics and Tax Relief</h3>
+      <p>Under Workplace Auto-Enrolment laws, employers must contribute at least 3% of qualifying earnings to a workplace pension, while employees typically contribute 5% (making a total minimum 8% contribution). Pensions provide significant tax advantages depending on how deductions are executed:</p>
+
+      <h4>A. Relief at Source</h4>
+      <p>Pension contributions are taken from your net pay <em>after</em> Income Tax and National Insurance are deducted. The pension provider claims basic 20% tax relief directly from HMRC and adds it to your pot. Higher or Additional Rate taxpayers must claim their extra 20% or 25% tax relief via Self Assessment.</p>
+
+      <h4>B. Net Pay Arrangement</h4>
+      <p>Contributions are deducted from gross pay <em>before</em> Income Tax is calculated. Full tax relief is instantly granted at your highest marginal rate via payroll, though National Insurance is still calculated on original gross pay.</p>
+
+      <h4>C. Salary Sacrifice (Salary Exchange)</h4>
+      <p>Salary Sacrifice is the most effective tax optimization tool in the UK. You voluntarily lower your contractual gross salary in exchange for an equivalent employer pension payment. Because your contractual gross pay decreases, you pay less Income Tax <strong>AND</strong> save 8% (or 2%) on Class 1 National Insurance.</p>
+
+      <h3>9. Student Loan Repayments (2025/2026 Rates)</h3>
+      <p>Student loan repayments are automatically collected via PAYE when gross pay passes annual thresholds. Repayments are levied at a fixed percentage on income earned above the threshold:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Student Loan Plan Type</th>
+            <th>2025/2026 Threshold (Annual)</th>
+            <th>Monthly Threshold</th>
+            <th>Repayment Percentage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Plan 1 (Pre-2012 UK Students)</td>
+            <td>£24,990</td>
+            <td>£2,082.50</td>
+            <td>9% over threshold</td>
+          </tr>
+          <tr>
+            <td>Plan 2 (Post-2012 England & Wales)</td>
+            <td>£27,295</td>
+            <td>£2,274.58</td>
+            <td>9% over threshold</td>
+          </tr>
+          <tr>
+            <td>Plan 4 (Scottish Higher Education)</td>
+            <td>£31,395</td>
+            <td>£2,616.25</td>
+            <td>9% over threshold</td>
+          </tr>
+          <tr>
+            <td>Plan 5 (Undergraduates starting 2023+)</td>
+            <td>£25,000</td>
+            <td>£2,083.33</td>
+            <td>9% over threshold</td>
+          </tr>
+          <tr>
+            <td>Postgraduate Loan</td>
+            <td>£21,000</td>
+            <td>£1,750.00</td>
+            <td>6% over threshold</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>10. Step-by-Step Calculation Example for 2025/2026</h3>
+      <p>Let us walk through a complete take-home pay calculation for an employee earning a **£52,000** gross annual salary in England during the 2025/2026 tax year, with a standard 1257L tax code, a 5% Net Pay pension contribution, and a Plan 2 student loan.</p>
+
+      <h4>Step 1: Calculate Pension Contribution</h4>
+      <p>5% of £52,000 gross salary = **£2,600.00 per year** (£216.67 / month).</p>
+
+      <h4>Step 2: Calculate Taxable Gross Pay</h4>
+      <p>Under Net Pay Arrangement, pension reduces taxable pay:</p>
+      <p>£52,000.00 - £2,600.00 = **£49,400.00 Taxable Gross**.</p>
+
+      <h4>Step 3: Calculate Income Tax (PAYE)</h4>
+      <p>Since £49,400 is below the £50,270 Higher Rate threshold, all taxable pay above the £12,570 Personal Allowance falls in the 20% Basic Rate band:</p>
+      <p>£49,400.00 - £12,570.00 = £36,830.00 subject to 20% tax.</p>
+      <p>20% of £36,830.00 = **£7,366.00 Annual Income Tax** (£613.83 / month).</p>
+
+      <h4>Step 4: Calculate National Insurance (Class 1)</h4>
+      <p>National Insurance is calculated on full gross salary (£52,000):</p>
+      <ul>
+        <li>Main Rate (8% on earnings between £12,570 and £50,270): 8% of £37,700 = £3,016.00</li>
+        <li>Upper Rate (2% on earnings above £50,270): 2% of £1,730 (£52,000 - £50,270) = £34.60</li>
+        <li><strong>Total Annual National Insurance:</strong> £3,016.00 + £34.60 = **£3,050.60** (£254.22 / month).</li>
+      </ul>
+
+      <h4>Step 5: Calculate Plan 2 Student Loan Deduction</h4>
+      <p>Plan 2 repayment threshold in 2025/2026 was £27,295:</p>
+      <p>£52,000.00 - £27,295.00 = £24,705.00 subject to 9% deduction.</p>
+      <p>9% of £24,705.00 = **£2,223.45 Annual Student Loan Payment** (£185.29 / month).</p>
+
+      <h4>Step 6: Summary of Net Take-Home Pay (2025/2026)</h4>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Pay Element</th>
+            <th>Annual Amount (£)</th>
+            <th>Monthly Amount (£)</th>
+            <th>% of Gross</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Gross Annual Salary</td>
+            <td>£52,000.00</td>
+            <td>£4,333.33</td>
+            <td>100.00%</td>
+          </tr>
+          <tr>
+            <td>Workplace Pension (5%)</td>
+            <td>-£2,600.00</td>
+            <td>-£216.67</td>
+            <td>5.00%</td>
+          </tr>
+          <tr>
+            <td>PAYE Income Tax</td>
+            <td>-£7,366.00</td>
+            <td>-£613.83</td>
+            <td>14.17%</td>
+          </tr>
+          <tr>
+            <td>National Insurance (Class 1)</td>
+            <td>-£3,050.60</td>
+            <td>-£254.22</td>
+            <td>5.87%</td>
+          </tr>
+          <tr>
+            <td>Plan 2 Student Loan</td>
+            <td>-£2,223.45</td>
+            <td>-£185.29</td>
+            <td>4.28%</td>
+          </tr>
+          <tr>
+            <td><strong>Net Take-Home Pay</strong></td>
+            <td><strong>£36,759.95</strong></td>
+            <td><strong>£3,063.33</strong></td>
+            <td><strong>70.69%</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>11. Additional Deductions and Special Pay Conditions</h3>
+      <p>When computing take-home pay across 2025/2026 and subsequent tax years, several secondary statutory factors can impact final net pay:</p>
+      <ul>
+        <li><strong>Benefits in Kind (P11D):</strong> Receiving perks like company vehicles or private health insurance increases taxable gross pay. HMRC adjusts your tax code downwards so tax on perks is collected via regular monthly payroll.</li>
+        <li><strong>High Income Child Benefit Charge (HICBC):</strong> For 2025/2026, the threshold for HICBC was set at £60,000. If an individual's net adjusted income exceeds £60,000, 1% of Child Benefit received must be paid back for every £200 earned above £60,000, reaching 100% at £80,000.</li>
+        <li><strong>Marriage Allowance Transfer:</strong> Low earners with gross pay under £12,570 can transfer £1,260 of unused allowance to a basic-rate paying spouse, saving the couple up to £252 per year in tax.</li>
+      </ul>
+
+      <h3>12. Practical Tips to Optimize Take-Home Pay Efficiency</h3>
+      <p>To maximize financial return on gross earnings, consider the following tax-planning strategies:</p>
+      <ol>
+        <li><strong>Adopt Salary Sacrifice:</strong> Converting voluntary pension contributions or employee benefits (like EV cars or cycle schemes) into salary sacrifice instantly slashes 8% National Insurance and up to 40%–45% Income Tax.</li>
+        <li><strong>Avoid the 60% Tax Trap:</strong> High earners making between £100,000 and £125,140 can allocate salary above £100,000 into a private or workplace pension, protecting their full £12,570 Personal Allowance.</li>
+        <li><strong>Review Your Payslip and Tax Code:</strong> Verify that your tax code accurately reflects your situation and that non-taxable allowances or pension deductions are formatted correctly on every monthly statement.</li>
+      </ol>
+    </article>
+
+    <!-- Hub Section with SEO Keywords -->
+    <section class="hub-section">
+      <h2>Specialized UK Tax Calculators</h2>
+      <div class="grid">
+        <a href="/scotland-take-home-pay-calculator" class="card">
+          <h3>Scottish Tax Calculator</h3>
+          <p>Calculations using Scottish Income Tax bands and thresholds.</p>
+        </a>
+        <a href="/nhs-take-home-pay-calculator" class="card">
+          <h3>NHS Pay Calculator</h3>
+          <p>Accounts for Agenda for Change bands and NHS pension tiers.</p>
+        </a>
+        <a href="/teacher-take-home-pay-calculator" class="card">
+          <h3>Teacher Pay Calculator</h3>
+          <p>Calculates salary after Teachers' Pension Scheme (TPS) deductions.</p>
+        </a>
+        <a href="/monthly-take-home-pay-calculator" class="card">
+          <h3>Monthly Pay Calculator</h3>
+          <p>Detailed monthly and weekly take-home pay budgeting breakdown.</p>
+        </a>
+        <a href="/london-take-home-pay-calculator" class="card">
+          <h3>London Weighting Calculator</h3>
+          <p>Includes High Cost Area Supplements for London commuters.</p>
+        </a>
+        <a href="/take-home-pay-calculator-2025-2026" class="card">
+          <h3>2025/2026 Tax Year Tool</h3>
+          <p>Compare previous tax years against current income tax rates.</p>
+        </a>
+        <a href="/ni-take-home-pay-calculator" class="card">
+          <h3>Northern Ireland Calculator</h3>
+          <p>Take-home pay estimates tailored for Northern Ireland employees.</p>
+        </a>
+        <a href="/ireland-take-home-pay-calculator" class="card">
+          <h3>Republic of Ireland Calculator</h3>
+          <p>Includes USC, PRSI, and Irish Tax Credit calculations.</p>
+        </a>
+        <a href="/student-loan-take-home-pay-calculator" class="card">
+          <h3>Student Loan Calculator</h3>
+          <p>Calculates deductions across Plan 1, Plan 2, Plan 5 & Postgrad loans.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion for Search Featured Snippets -->
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+
+      <details class="faq-item">
+        <summary>What was the UK Personal Allowance for the 2025/2026 tax year?</summary>
+        <p>The standard tax-free Personal Allowance for 2025/2026 was <strong>£12,570</strong>. Income up to this threshold was free from Income Tax for most UK taxpayers.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How does a take home pay calculator 2025 differ from a 2026 calculator?</summary>
+        <p>The core Income Tax bands and Class 1 National Insurance rates (8% main rate) were identical between 2025/2026 and 2026/2027. However, student loan thresholds (such as Plan 2 and Plan 4) increased slightly in 2026/2027, altering net pay for student loan borrowers.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How much Class 1 National Insurance did employees pay in 2025/2026?</summary>
+        <p>Employees paid <strong>8%</strong> on gross earnings between £12,570 and £50,270 per year (£1,048 to £4,189 per month). Earnings above £50,270 were subject to a <strong>2%</strong> rate.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How do pension contributions reduce tax in 2025/2026?</summary>
+        <p>Contributions made via <strong>Net Pay Arrangement</strong> or <strong>Salary Sacrifice</strong> are deducted before Income Tax is calculated, automatically granting full tax relief at your top marginal rate.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What is the 60% effective tax rate trap in the UK?</summary>
+        <p>For earnings between £100,000 and £125,140, your £12,570 Personal Allowance decreases by £1 for every £2 earned. This creates a combined effective marginal Income Tax rate of 60% within this bracket before National Insurance.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What was the Plan 2 student loan threshold in 2025/2026?</summary>
+        <p>In 2025/2026, the Plan 2 repayment threshold was <strong>£27,295</strong> per year (£2,274.58 per month). Repayments were 9% on earnings above this limit.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What is the standard tax code 1257L?</summary>
+        <p>Code <strong>1257L</strong> indicates entitlement to the full standard £12,570 tax-free Personal Allowance across the tax year.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How does Scottish Income Tax work for 2025/2026?</summary>
+        <p>Scotland uses a 6-band tax framework (Starter 19%, Basic 20%, Intermediate 21%, Higher 42%, Advanced 45%, and Top 48%). Higher rates kick in at £43,663 in Scotland compared to £50,270 in the rest of the UK.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How does Salary Sacrifice increase net pay efficiency?</summary>
+        <p>By lowering your statutory gross income in exchange for a benefit (like pension contributions), you avoid paying both Income Tax (20%–45%) and National Insurance (8% or 2%) on the sacrificed amount.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What is the High Income Child Benefit Charge threshold for 2025/2026?</summary>
+        <p>The threshold is **£60,000**. Individuals earning over £60,000 pay a tax charge of 1% of Child Benefit received for every £200 earned above £60,000, fully clawing back benefit at £80,000.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 TakeHomePayCalc.me — Accurate UK Net Salary & Income Tax Calculations</p>
+  </footer>
+
+  <script>
+    // Navigation Toggle Logic
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    // Core Salary Engine Logic
+    function calculatePay() {
+      const gross = parseFloat(document.getElementById('salary').value) || 0;
+      const pensionPercent = parseFloat(document.getElementById('pension').value) || 0;
+
+      const personalAllowance = 12570;
+      const basicRateThreshold = 50270;
+      const pensionDeduction = gross * (pensionPercent / 100);
+      const taxableGross = Math.max(0, gross - pensionDeduction);
+
+      let tax = 0;
+      if (taxableGross > personalAllowance) {
+        if (taxableGross <= basicRateThreshold) {
+          tax = (taxableGross - personalAllowance) * 0.20;
+        } else {
+          tax = ((basicRateThreshold - personalAllowance) * 0.20) + ((taxableGross - basicRateThreshold) * 0.40);
+        }
+      }
+
+      let ni = 0;
+      const niThreshold = 12570;
+      const niUpperLimit = 50270;
+      if (gross > niThreshold) {
+        if (gross <= niUpperLimit) {
+          ni = (gross - niThreshold) * 0.08;
+        } else {
+          ni = ((niUpperLimit - niThreshold) * 0.08) + ((gross - niUpperLimit) * 0.02);
+        }
+      }
+
+      const net = gross - tax - ni - pensionDeduction;
+
+      document.getElementById('gross-year').innerText = '£' + Math.round(gross).toLocaleString();
+      document.getElementById('gross-month').innerText = '£' + Math.round(gross / 12).toLocaleString();
+
+      document.getElementById('tax-year-val').innerText = '£' + Math.round(tax).toLocaleString();
+      document.getElementById('tax-month-val').innerText = '£' + Math.round(tax / 12).toLocaleString();
+
+      document.getElementById('ni-year').innerText = '£' + Math.round(ni).toLocaleString();
+      document.getElementById('ni-month').innerText = '£' + Math.round(ni / 12).toLocaleString();
+
+      document.getElementById('pension-year').innerText = '£' + Math.round(pensionDeduction).toLocaleString();
+      document.getElementById('pension-month').innerText = '£' + Math.round(pensionDeduction / 12).toLocaleString();
+
+      document.getElementById('net-year').innerText = '£' + Math.round(net).toLocaleString();
+      document.getElementById('net-month').innerText = '£' + Math.round(net / 12).toLocaleString();
+    }
+
+    calculatePay();
+  </script>
+</body>
+</html>

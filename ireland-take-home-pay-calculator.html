@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en-IE">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary Meta Tags -->
+  <title>Republic of Ireland Take-Home Pay Calculator (2026) | Irish Salary & Tax Calculator</title>
+  <meta name="title" content="Republic of Ireland Take-Home Pay Calculator (2026) | Irish Salary & Tax Calculator">
+  <meta name="description" content="Calculate your exact Republic of Ireland take-home pay, PAYE Income Tax, Universal Social Charge (USC), PRSI, and pension contributions for 2026 instantly.">
+  <meta name="keywords" content="take home pay calculator ireland, republic of ireland pay calculator, irish salary calculator, paye calculator ireland, usc calculator, prsi calculator ireland, net pay calculator Dublin">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="TakeHomePayCalc.me">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://takehomepaycalc.me/ireland-take-home-pay-calculator">
+  <meta property="og:title" content="Republic of Ireland Take-Home Pay Calculator (2026) | Irish Salary & Tax Calculator">
+  <meta property="og:description" content="Calculate your exact Irish take-home pay, PAYE income tax, USC, PRSI, and pension deductions instantly.">
+  <meta property="og:image" content="https://takehomepaycalc.me/assets/logo.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://takehomepaycalc.me/ireland-take-home-pay-calculator">
+  <meta name="twitter:title" content="Republic of Ireland Take-Home Pay Calculator (2026)">
+  <meta name="twitter:description" content="Calculate your exact net salary in Ireland after PAYE tax, USC, PRSI, and pension deductions.">
+  <meta name="twitter:image" content="https://takehomepaycalc.me/assets/logo.png">
+
+  <!-- Favicon & Icons -->
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+
+  <!-- Structured Data: WebApplication & FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://takehomepaycalc.me/ireland-take-home-pay-calculator#webapp",
+        "url": "https://takehomepaycalc.me/ireland-take-home-pay-calculator",
+        "name": "Republic of Ireland Take-Home Pay Calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript",
+        "description": "Calculate net salary, PAYE income tax, Universal Social Charge (USC), PRSI, and pension deductions for taxpayers in the Republic of Ireland."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://takehomepaycalc.me/ireland-take-home-pay-calculator#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://takehomepaycalc.me/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Republic of Ireland Take-Home Pay Calculator",
+            "item": "https://takehomepaycalc.me/ireland-take-home-pay-calculator"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://takehomepaycalc.me/ireland-take-home-pay-calculator#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How is take-home pay calculated in the Republic of Ireland?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In Ireland, net pay is calculated by taking your gross income and subtracting PAYE Income Tax (20% standard / 40% higher rate minus Personal and Employee Tax Credits), Universal Social Charge (USC), and Pay Related Social Insurance (PRSI), alongside pension contributions."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the tax credits for single employees in Ireland?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A standard single employee in Ireland qualifies for the Personal Tax Credit (€1,875) and the Employee (PAYE) Tax Credit (€1,875), giving a minimum combined annual tax credit of €3,750."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+ <style>
+  :root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --bg: #f8fafc;
+    --card-bg: #ffffff;
+    --text: #0f172a;
+    --text-muted: #475569;
+    --border: #e2e8f0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
+
+  /* Header & Navigation */
+  header { background: var(--card-bg); border-bottom: 1px solid var(--border); padding: 1rem 2rem; position: relative; }
+  nav { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+  
+  .logo-container { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; }
+  .logo-img { width: 38px; height: 38px; object-fit: contain; }
+  .logo-text { font-size: 1.25rem; font-weight: 700; color: var(--primary); }
+
+  .nav-menu { display: flex; gap: 1rem; list-style: none; }
+  .nav-menu a { text-decoration: none; color: var(--text-muted); font-size: 0.9rem; font-weight: 500; }
+  .nav-menu a:hover { color: var(--primary); }
+
+  .menu-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text); }
+
+  /* Main Container */
+  main { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
+  .hero-title { text-align: center; margin-bottom: 2rem; }
+  .hero-title h1 { font-size: 2.2rem; color: var(--text); margin-bottom: 0.5rem; }
+  .hero-title p { color: var(--text-muted); font-size: 1.05rem; }
+
+  /* Calculator Layout */
+  .calc-container { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; background: var(--card-bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+  
+  .form-group { margin-bottom: 1.2rem; }
+  .form-group label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem; }
+  .form-group input, .form-group select { width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 6px; font-size: 1rem; }
+  .form-group input:focus, .form-group select:focus { outline: 2px solid var(--primary); border-color: transparent; }
+
+  /* Results Table */
+  .results-card { background: var(--bg); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border); }
+  .results-card h2 { font-size: 1.2rem; margin-bottom: 1rem; }
+  .results-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; }
+  .results-table th, .results-table td { padding: 0.6rem 0; border-bottom: 1px solid var(--border); }
+  .results-table tr.highlight td { font-weight: 700; color: var(--primary-dark); font-size: 1.05rem; border-bottom: none; }
+
+  /* Expanded Content Typography & Formatting */
+  .content-section { 
+    margin-top: 3.5rem; 
+    background: var(--card-bg); 
+    padding: 2.5rem; 
+    border-radius: 12px; 
+    border: 1px solid var(--border); 
+  }
+  
+  .content-section h2 { font-size: 1.8rem; margin-bottom: 1.2rem; color: var(--text); border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1.3rem; margin: 2rem 0 0.8rem; color: var(--primary-dark); }
+  .content-section h4 { font-size: 1.1rem; margin: 1.2rem 0 0.5rem; color: var(--text); }
+  .content-section p { margin-bottom: 1.2rem; color: var(--text-muted); font-size: 1rem; line-height: 1.7; }
+  
+  .content-section ul, .content-section ol { margin: 0 0 1.5rem 1.5rem; color: var(--text-muted); }
+  .content-section li { margin-bottom: 0.5rem; line-height: 1.6; }
+
+  /* Embedded In-Content Data Tables */
+  .content-section table { width: 100%; border-collapse: collapse; margin: 1.5rem 0 2rem; background: var(--bg); border-radius: 6px; overflow: hidden; border: 1px solid var(--border); }
+  .content-section th, .content-section td { padding: 0.8rem 1rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.95rem; }
+  .content-section th { background: #edf2f7; font-weight: 600; color: var(--text); }
+  .content-section tr:last-child td { border-bottom: none; }
+
+  /* Hub Section */
+  .hub-section, .faq-section { margin-top: 3.5rem; }
+  .hub-section h2, .faq-section h2 { font-size: 1.5rem; margin-bottom: 1.5rem; text-align: center; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.2rem; }
+  .card { background: var(--card-bg); border: 1px solid var(--border); padding: 1.25rem; border-radius: 8px; text-decoration: none; color: inherit; transition: transform 0.1s, border-color 0.1s; }
+  .card:hover { transform: translateY(-2px); border-color: var(--primary); }
+  .card h3 { font-size: 1.1rem; color: var(--primary); margin-bottom: 0.3rem; }
+  .card p { font-size: 0.85rem; color: var(--text-muted); }
+
+  /* FAQ Accordion Details */
+  .faq-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 6px; padding: 1rem; margin-bottom: 0.8rem; }
+  .faq-item summary { font-weight: 600; cursor: pointer; color: var(--text); }
+  .faq-item p { margin-top: 0.5rem; color: var(--text-muted); font-size: 0.95rem; }
+
+  /* Footer */
+  footer { text-align: center; padding: 2rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 4rem; }
+
+  /* Mobile Responsive Table and Menu Styles */
+  @media (max-width: 768px) {
+    header { padding: 1rem; }
+    .calc-container { grid-template-columns: 1fr; }
+    .menu-toggle { display: block; }
+    .nav-menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0; right: 0;
+      background: var(--card-bg);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem;
+      gap: 0.8rem;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    }
+    .nav-menu.active { display: flex; }
+    .content-section { padding: 1.2rem; }
+    .content-section table { display: block; overflow-x: auto; white-space: nowrap; }
+  }
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T3E3V013H2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-T3E3V013H2');
+</script>
+</head>
+<body>
+
+  <header>
+    <nav aria-label="Main Navigation">
+      <a href="/" class="logo-container">
+        <img src="assets/logo.png" alt="TakeHomePayCalc Logo" class="logo-img" width="38" height="38">
+        <span class="logo-text">Takehomepaycalc</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">☰</button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="/scotland-take-home-pay-calculator">Scotland</a></li>
+        <li><a href="/nhs-take-home-pay-calculator">NHS</a></li>
+        <li><a href="/teacher-take-home-pay-calculator">Teachers</a></li>
+        <li><a href="/monthly-take-home-pay-calculator">Monthly</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-title">
+      <h1>Republic of Ireland Take-Home Pay Calculator (2026)</h1>
+      <p>Calculate your exact net salary in Ireland after PAYE Income Tax, Universal Social Charge (USC), PRSI, and pension contributions.</p>
+    </section>
+
+    <!-- Interactive App Container -->
+    <section class="calc-container" aria-label="Republic of Ireland Salary Calculator Tool">
+      <div class="calc-inputs">
+        <div class="form-group">
+          <label for="salary">Gross Annual Salary (€)</label>
+          <input type="number" id="salary" value="45000" placeholder="e.g. 45000" oninput="calculatePay()" aria-required="true">
+        </div>
+        <div class="form-group">
+          <label for="marital-status">Tax Status</label>
+          <select id="marital-status" onchange="calculatePay()">
+            <option value="single">Single</option>
+            <option value="married-one-income">Married / Civil Partner (One Income)</option>
+            <option value="married-dual-income">Married / Civil Partner (Dual Income)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="pension">Workplace Pension Contribution (%)</label>
+          <input type="number" id="pension" value="5" min="0" max="100" oninput="calculatePay()">
+        </div>
+      </div>
+
+      <div class="results-card" aria-live="polite">
+        <h2>Your Irish Net Salary Breakdown</h2>
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th scope="col">Deduction</th>
+              <th scope="col">Yearly</th>
+              <th scope="col">Monthly</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Gross Pay</td>
+              <td id="gross-year">€0</td>
+              <td id="gross-month">€0</td>
+            </tr>
+            <tr>
+              <td>PAYE Income Tax</td>
+              <td id="tax-year-val">€0</td>
+              <td id="tax-month-val">€0</td>
+            </tr>
+            <tr>
+              <td>USC (Universal Social Charge)</td>
+              <td id="usc-year">€0</td>
+              <td id="usc-month">€0</td>
+            </tr>
+            <tr>
+              <td>PRSI (Class A)</td>
+              <td id="prsi-year">€0</td>
+              <td id="prsi-month">€0</td>
+            </tr>
+            <tr>
+              <td>Pension Contribution</td>
+              <td id="pension-year">€0</td>
+              <td id="pension-month">€0</td>
+            </tr>
+            <tr class="highlight">
+              <td>Net Take-Home Pay</td>
+              <td id="net-year">€0</td>
+              <td id="net-month">€0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SEO Content Area -->
+    <article class="content-section">
+  <h2>Complete Guide to Income Tax, USC, PRSI, and Take-Home Pay in the Republic of Ireland</h2>
+  <p>Navigating payroll and personal taxation in the Republic of Ireland requires an understanding of three independent statutory deductions administered by Revenue (Irish Tax and Customs) and the Department of Social Protection: Pay As You Earn (PAYE) Income Tax, the Universal Social Charge (USC), and Pay Related Social Insurance (PRSI). Whether you are employed in Dublin, Cork, Galway, or working remotely, converting gross salary into net take-home pay depends on your tax band, marital status, and tax credits.</p>
+  <p>Unlike the UK system, which relies heavily on personal allowances, the Irish tax system utilizes standard rate cut-off points combined with direct Tax Credits to reduce your gross income tax bill euro-for-euro. This guide provides a detailed breakdown of every tax bracket, charge, and contribution applied to Irish payslips.</p>
+
+  <h3>1. Pay As You Earn (PAYE) System in Ireland</h3>
+  <p>In Ireland, PAYE is the fundamental mechanism used by employers to withhold Income Tax on earnings. Taxable earnings include basic wages, overtime, bonuses, and non-cash Benefits in Kind (BIK) like healthcare or company cars.</p>
+  <p>Income Tax is levied across two primary rate bands:</p>
+  <ul>
+    <li><strong>Standard Rate (20%):</strong> Applied to earnings up to your Standard Rate Cut-Off Point (SRCOP).</li>
+    <li><strong>Higher Rate (40%):</strong> Applied to any gross taxable income above your designated SRCOP.</li>
+  </ul>
+
+  <h3>2. Standard Rate Cut-Off Points (SRCOP) and Personal Tax Credits</h3>
+  <p>Your Standard Rate Cut-Off Point (SRCOP) dictates how much of your annual salary can be taxed at the 20% standard rate before you enter the 40% higher rate tax bracket. The SRCOP threshold depends on your civil status:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Personal / Civil Status</th>
+        <th>Standard Rate Cut-Off Point (20% Band)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Single / Widowed (without qualifying child)</td>
+        <td>€42,000</td>
+      </tr>
+      <tr>
+        <td>Single Parent (qualifying for Single Person Child Carer Credit)</td>
+        <td>€46,000</td>
+      </tr>
+      <tr>
+        <td>Married / Civil Partners (One Income)</td>
+        <td>€51,000</td>
+      </tr>
+      <tr>
+        <td>Married / Civil Partners (Dual Income)</td>
+        <td>€51,000 + up to €33,000 max (€84,000 total max)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4>Understanding Tax Credits</h4>
+  <p>Once gross PAYE Income Tax is calculated at 20% and 40%, direct Tax Credits are subtracted from the gross tax amount. Common tax credits include:</p>
+  <ul>
+    <li><strong>Personal Tax Credit:</strong> €1,875 per year for single taxpayers (€3,750 for married couples jointly assessed).</li>
+    <li><strong>Employee (PAYE) Tax Credit:</strong> €1,875 per year for individuals in standard PAYE employment.</li>
+    <li><strong>Rent Tax Credit:</strong> Allows eligible renters to claim tax relief on rent payments made in Ireland.</li>
+  </ul>
+
+  <h3>3. Universal Social Charge (USC) Rates and Bands</h3>
+  <p>The Universal Social Charge (USC) is a individual tax calculated directly on gross income (before pension deductions or tax credits). USC applies to all individuals whose total gross annual income exceeds **€13,000**.</p>
+  <p>The progressive USC rates and thresholds are structured as follows:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>USC Band</th>
+        <th>Gross Income Bracket</th>
+        <th>USC Rate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Band 1</td>
+        <td>First €12,012</td>
+        <td>0.5%</td>
+      </tr>
+      <tr>
+        <td>Band 2</td>
+        <td>Next €13,748 (€12,013 to €25,760)</td>
+        <td>2.0%</td>
+      </tr>
+      <tr>
+        <td>Band 3</td>
+        <td>Next €44,284 (€25,761 to €70,044)</td>
+        <td>3.0%</td>
+      </tr>
+      <tr>
+        <td>Band 4</td>
+        <td>Balance over €70,044</td>
+        <td>8.0%</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><em>Note: Self-employed income exceeding €100,000 incurs a USC surcharge rate of 11% on earnings over that limit.</em></p>
+
+  <h3>4. Pay Related Social Insurance (PRSI)</h3>
+  <p>PRSI contributions fund social welfare entitlements, including state pensions, maternity pay, and jobseeker's benefits. The vast majority of standard private sector employees fall under **Class A PRSI**.</p>
+  <ul>
+    <li><strong>Employee Class A PRSI Rate:</strong> Standard contribution of **4%** on all gross earnings.</li>
+    <li><strong>PRSI Credit:</strong> If your weekly earnings fall between €352.01 and €424.00, a tapered PRSI Credit reduces your total weekly PRSI charge, easing the transition into full social insurance contributions.</li>
+  </ul>
+
+  <h3>5. Irish Pension Tax Relief and Auto-Enrolment</h3>
+  <p>Contributing to an approved workplace or personal pension (PRSA / RAC / Occupational Pension) provides valuable tax relief in Ireland. Tax relief on pension contributions is available at your highest marginal PAYE rate (up to 20% or 40%).</p>
+  <p>HMRC/Revenue sets age-based limits on the maximum percentage of gross income eligible for tax relief:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Age Bracket</th>
+        <th>Max Pension Tax Relief Limit (% of Gross Income)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Under 30 years</td>
+        <td>15%</td>
+      </tr>
+      <tr>
+        <td>30 to 39 years</td>
+        <td>20%</td>
+      </tr>
+      <tr>
+        <td>40 to 49 years</td>
+        <td>25%</td>
+      </tr>
+      <tr>
+        <td>50 to 54 years</td>
+        <td>30%</td>
+      </tr>
+      <tr>
+        <td>55 to 59 years</td>
+        <td>35%</td>
+      </tr>
+      <tr>
+        <td>60 years and over</td>
+        <td>40%</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><em>Note: An annual earnings cap of €115,000 applies when calculating pension tax relief limits in Ireland. Tax relief applies to PAYE Income Tax, but does not reduce USC or PRSI liabilities.</em></p>
+
+  <h3>6. Worked Example: Step-by-Step Irish Net Salary Calculation</h3>
+  <p>Let us walk through a full net pay calculation for a single employee earning a gross annual salary of **€50,000** with a **5% pension contribution**.</p>
+
+  <h4>Step 1: Gross Salary & Pension Deduction</h4>
+  <p>5% Pension of €50,000 = **€2,500 / year** (€208.33 / month).</p>
+
+  <h4>Step 2: Calculate Taxable Gross Pay for PAYE</h4>
+  <p>€50,000 gross - €2,500 pension = **€47,500 Taxable Gross**.</p>
+
+  <h4>Step 3: Calculate Gross PAYE Income Tax</h4>
+  <ul>
+    <li>20% on first €42,000 (SRCOP) = **€8,400**</li>
+    <li>40% on remaining €5,500 (€47,500 - €42,000) = **€2,200**</li>
+    <li><strong>Total Gross PAYE:</strong> €8,400 + €2,200 = **€10,600**</li>
+  </ul>
+
+  <h4>Step 4: Apply Tax Credits (Net PAYE)</h4>
+  <p>Subtract Single Personal Tax Credit (€1,875) + Employee Tax Credit (€1,875) = **€3,750 Total Tax Credits**.</p>
+  <p>€10,600 gross tax - €3,750 tax credits = **€6,850 Net PAYE Income Tax** (€570.83 / month).</p>
+
+  <h4>Step 5: Calculate USC (On Full Gross Income €50,000)</h4>
+  <ul>
+    <li>Band 1: 0.5% on first €12,012 = **€60.06**</li>
+    <li>Band 2: 2.0% on next €13,748 = **€274.96**</li>
+    <li>Band 3: 3.0% on remaining €24,240 (€50,000 - €25,760) = **€727.20**</li>
+    <li><strong>Total USC:</strong> €60.06 + €274.96 + €727.20 = **€1,062.22** (€88.52 / month).</li>
+  </ul>
+
+  <h4>Step 6: Calculate Employee PRSI (Class A 4%)</h4>
+  <p>4% of €50,000 gross = **€2,000 Annual PRSI** (€166.67 / month).</p>
+
+  <h4>Step 7: Final Net Take-Home Pay Summary</h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Deduction Item</th>
+        <th>Annual Amount</th>
+        <th>Monthly Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Gross Pay</td>
+        <td>€50,000.00</td>
+        <td>€4,166.67</td>
+      </tr>
+      <tr>
+        <td>Pension Contribution (5%)</td>
+        <td>-€2,500.00</td>
+        <td>-€208.33</td>
+      </tr>
+      <tr>
+        <td>PAYE Income Tax</td>
+        <td>-€6,850.00</td>
+        <td>-€570.83</td>
+      </tr>
+      <tr>
+        <td>USC (Universal Social Charge)</td>
+        <td>-€1,062.22</td>
+        <td>-€88.52</td>
+      </tr>
+      <tr>
+        <td>PRSI (Class A)</td>
+        <td>-€2,000.00</td>
+        <td>-€166.67</td>
+      </tr>
+      <tr>
+        <td><strong>Net Take-Home Pay</strong></td>
+        <td><strong>€37,587.78</strong></td>
+        <td><strong>€3,132.32</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>7. Cross-Border & Special Considerations</h3>
+  <ul>
+    <li><strong>Cross-Border Workers (ROI & NI / UK):</strong> Commuters living in Ireland and working in Northern Ireland or mainland UK must review the Transborder Workers Relief and Ireland-UK tax treaty guidelines to avoid double taxation.</li>
+    <li><strong>Benefit in Kind (BIK):</strong> Non-cash benefits like health insurance, company vehicles, or vouchers are treated as taxable income in Ireland, increasing gross PAYE, USC, and PRSI obligations.</li>
+  </ul>
+
+  <p>Use our interactive Republic of Ireland Take-Home Pay Calculator above to estimate your customized net income based on salary, tax status, and pension contributions.</p>
+</article>
+
+    <!-- Hub Section with SEO Keywords -->
+    <section class="hub-section">
+      <h2>Specialized UK & Ireland Tax Calculators</h2>
+      <div class="grid">
+        <a href="/scotland-take-home-pay-calculator" class="card">
+          <h3>Scottish Tax Calculator</h3>
+          <p>Calculations using Scottish Income Tax bands and thresholds.</p>
+        </a>
+        <a href="/nhs-take-home-pay-calculator" class="card">
+          <h3>NHS Pay Calculator</h3>
+          <p>Accounts for Agenda for Change bands and NHS pension tiers.</p>
+        </a>
+        <a href="/teacher-take-home-pay-calculator" class="card">
+          <h3>Teacher Pay Calculator</h3>
+          <p>Calculates salary after Teachers' Pension Scheme (TPS) deductions.</p>
+        </a>
+        <a href="/monthly-take-home-pay-calculator" class="card">
+          <h3>Monthly Pay Calculator</h3>
+          <p>Detailed monthly and weekly take-home pay budgeting breakdown.</p>
+        </a>
+        <a href="/london-take-home-pay-calculator" class="card">
+          <h3>London Weighting Calculator</h3>
+          <p>Includes High Cost Area Supplements for London commuters.</p>
+        </a>
+        <a href="/take-home-pay-calculator-2025-2026" class="card">
+          <h3>2025/2026 Tax Year Tool</h3>
+          <p>Compare previous tax years against current income tax rates.</p>
+        </a>
+        <a href="/ni-take-home-pay-calculator" class="card">
+          <h3>Northern Ireland Calculator</h3>
+          <p>Take-home pay estimates tailored for Northern Ireland employees.</p>
+        </a>
+        <a href="/ireland-take-home-pay-calculator" class="card">
+          <h3>Republic of Ireland Calculator</h3>
+          <p>Includes USC, PRSI, and Irish Tax Credit calculations.</p>
+        </a>
+        <a href="/student-loan-take-home-pay-calculator" class="card">
+          <h3>Student Loan Calculator</h3>
+          <p>Calculates deductions across Plan 1, Plan 2, Plan 5 & Postgrad loans.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion for Search Featured Snippets -->
+    <section class="faq-section">
+  <h2>Frequently Asked Questions</h2>
+
+  <details class="faq-item">
+    <summary>How is my take-home pay calculated in the Republic of Ireland?</summary>
+    <p>Your net salary in Ireland is calculated by deducting PAYE Income Tax (20% basic or 40% higher rate minus tax credits), Universal Social Charge (USC), Employee PRSI (4%), and pension contributions from your gross pay.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>What is the Standard Rate Cut-Off Point (SRCOP) in Ireland?</summary>
+    <p>The Standard Rate Cut-Off Point is the threshold up to which your income is taxed at the 20% standard rate. For single taxpayers, the standard cut-off point is <strong>€42,000</strong> per year. Income above this is taxed at 40%.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>What tax credits do I get as a single employee in Ireland?</summary>
+    <p>A single employee typically receives the Personal Tax Credit (€1,875) and the PAYE Employee Tax Credit (€1,875), totaling <strong>€3,750</strong> in annual tax credits to offset against PAYE tax.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>What is the Universal Social Charge (USC)?</summary>
+    <p>USC is a progressive tax calculated directly on gross income above €13,000. Rates start at 0.5% for the first €12,012, 2.0% on the next tier, 3.0% up to €70,044, and 8.0% on income over €70,044.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>How much PRSI do employees pay in Ireland?</summary>
+    <p>Standard employees under PRSI Class A pay <strong>4%</strong> on all gross earnings. A PRSI relief credit applies to workers earning between €352.01 and €424.00 per week.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>Do pension contributions reduce my USC or PRSI?</summary>
+    <p>No. Pension contributions reduce gross taxable income for PAYE Income Tax purposes, but USC and PRSI are calculated on full gross earnings prior to pension contributions.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>What is the tax status difference for married couples in Ireland?</summary>
+    <p>Married couples can choose joint assessment, allowing them to transfer unused Standard Rate Cut-Off Points (up to €51,000 max for one earner) and tax credits between spouses to reduce overall household tax.</p>
+  </details>
+</section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 TakeHomePayCalc.me — Accurate UK & Ireland Net Salary Calculations</p>
+  </footer>
+
+  <script>
+    // Navigation Toggle Logic
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    // Irish Payroll Calculation Engine
+    function calculatePay() {
+      const gross = parseFloat(document.getElementById('salary').value) || 0;
+      const status = document.getElementById('marital-status').value;
+      const pensionPercent = parseFloat(document.getElementById('pension').value) || 0;
+
+      // Pension
+      const pensionDeduction = gross * (pensionPercent / 100);
+      const taxableGross = Math.max(0, gross - pensionDeduction);
+
+      // PAYE Parameters
+      let srcop = 42000;
+      let personalCredit = 1875;
+      let employeeCredit = 1875;
+
+      if (status === 'married-one-income') {
+        srcop = 51000;
+        personalCredit = 3750;
+      } else if (status === 'married-dual-income') {
+        srcop = 51000 + 33000; // Total upper max cap
+        personalCredit = 3750;
+        employeeCredit = 3750;
+      }
+
+      let grossTax = 0;
+      if (taxableGross <= srcop) {
+        grossTax = taxableGross * 0.20;
+      } else {
+        grossTax = (srcop * 0.20) + ((taxableGross - srcop) * 0.40);
+      }
+
+      const totalCredits = personalCredit + employeeCredit;
+      const netTax = Math.max(0, grossTax - totalCredits);
+
+      // Universal Social Charge (USC) Calculation
+      let usc = 0;
+      if (gross > 13000) {
+        const b1 = Math.min(gross, 12012);
+        usc += b1 * 0.005;
+
+        if (gross > 12012) {
+          const b2 = Math.min(gross - 12012, 13748);
+          usc += b2 * 0.02;
+        }
+        if (gross > 25760) {
+          const b3 = Math.min(gross - 25760, 44284);
+          usc += b3 * 0.03;
+        }
+        if (gross > 70044) {
+          const b4 = gross - 70044;
+          usc += b4 * 0.08;
+        }
+      }
+
+      // PRSI (Class A 4%)
+      const prsi = gross * 0.04;
+
+      // Net Pay
+      const net = gross - netTax - usc - prsi - pensionDeduction;
+
+      // DOM Formatting
+      document.getElementById('gross-year').innerText = '€' + Math.round(gross).toLocaleString();
+      document.getElementById('gross-month').innerText = '€' + Math.round(gross / 12).toLocaleString();
+
+      document.getElementById('tax-year-val').innerText = '€' + Math.round(netTax).toLocaleString();
+      document.getElementById('tax-month-val').innerText = '€' + Math.round(netTax / 12).toLocaleString();
+
+      document.getElementById('usc-year').innerText = '€' + Math.round(usc).toLocaleString();
+      document.getElementById('usc-month').innerText = '€' + Math.round(usc / 12).toLocaleString();
+
+      document.getElementById('prsi-year').innerText = '€' + Math.round(prsi).toLocaleString();
+      document.getElementById('prsi-month').innerText = '€' + Math.round(prsi / 12).toLocaleString();
+
+      document.getElementById('pension-year').innerText = '€' + Math.round(pensionDeduction).toLocaleString();
+      document.getElementById('pension-month').innerText = '€' + Math.round(pensionDeduction / 12).toLocaleString();
+
+      document.getElementById('net-year').innerText = '€' + Math.round(net).toLocaleString();
+      document.getElementById('net-month').innerText = '€' + Math.round(net / 12).toLocaleString();
+    }
+
+    calculatePay();
+  </script>
+</body>
+</html>

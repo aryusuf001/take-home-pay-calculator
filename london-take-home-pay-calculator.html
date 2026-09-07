@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary Meta Tags -->
+  <title>London Take-Home Pay Calculator (2026/2027) | Inner & Outer Weighting</title>
+  <meta name="title" content="London Take-Home Pay Calculator (2026/2027) | Inner & Outer Weighting">
+  <meta name="description" content="Calculate your exact London take-home pay including Inner and Outer London Weighting, High Cost Area Supplements (HCAS), PAYE income tax, National Insurance, and student loans.">
+  <meta name="keywords" content="take home pay calculator london, london take home pay calculator, london weighting salary calculator, inner london allowance calculator, london net salary calculator">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="TakeHomePayCalc.me">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://takehomepaycalc.me/london-take-home-pay-calculator">
+  <meta property="og:title" content="London Take-Home Pay Calculator (2026/2027)">
+  <meta property="og:description" content="Calculate your net monthly and annual salary in London accounting for London Weighting, HCAS, PAYE tax, NI, and pension deductions.">
+  <meta property="og:image" content="https://takehomepaycalc.me/assets/logo.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://takehomepaycalc.me/london-take-home-pay-calculator">
+  <meta name="twitter:title" content="London Take-Home Pay Calculator (2026/2027)">
+  <meta name="twitter:description" content="Estimate your exact take-home pay with Inner London, Outer London, and Fringe weighting adjustments.">
+  <meta name="twitter:image" content="https://takehomepaycalc.me/assets/logo.png">
+
+  <!-- Favicon & Icons -->
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+
+  <!-- Structured Data: WebApplication & FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://takehomepaycalc.me/london-take-home-pay-calculator#webapp",
+        "url": "https://takehomepaycalc.me/london-take-home-pay-calculator",
+        "name": "London Take-Home Pay Calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript",
+        "description": "Calculate net pay for London employees accounting for Inner/Outer London Weighting, NHS HCAS allowances, PAYE tax, and National Insurance."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://takehomepaycalc.me/london-take-home-pay-calculator#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://takehomepaycalc.me/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "London Calculator",
+            "item": "https://takehomepaycalc.me/london-take-home-pay-calculator"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://takehomepaycalc.me/london-take-home-pay-calculator#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is London Weighting and how does it affect take-home pay?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "London Weighting is an additional allowance paid to employees working in London to help offset the capital's higher cost of living. It is added to your base salary and subject to standard PAYE Income Tax, National Insurance, and pension deductions."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much is Inner vs Outer London Weighting?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Inner London Weighting typically ranges from £4,000 to £7,500 annually in corporate, teaching, and civil service sectors (or 20% in the NHS up to £5,735). Outer London Weighting usually ranges from £2,000 to £4,500 annually (or 15% in the NHS up to £4,473)."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
+
+    /* Header & Navigation */
+    header { background: var(--card-bg); border-bottom: 1px solid var(--border); padding: 1rem 2rem; position: relative; }
+    nav { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    
+    .logo-container { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; }
+    .logo-img { width: 38px; height: 38px; object-fit: contain; }
+    .logo-text { font-size: 1.25rem; font-weight: 700; color: var(--primary); }
+
+    .nav-menu { display: flex; gap: 1rem; list-style: none; }
+    .nav-menu a { text-decoration: none; color: var(--text-muted); font-size: 0.9rem; font-weight: 500; }
+    .nav-menu a:hover { color: var(--primary); }
+
+    .menu-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text); }
+
+    /* Main Container */
+    main { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
+    .hero-title { text-align: center; margin-bottom: 2rem; }
+    .hero-title h1 { font-size: 2.2rem; color: var(--text); margin-bottom: 0.5rem; }
+    .hero-title p { color: var(--text-muted); font-size: 1.05rem; }
+
+    /* Calculator Layout */
+    .calc-container { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; background: var(--card-bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+    
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem; }
+    .form-group input, .form-group select { width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 6px; font-size: 1rem; }
+    .form-group input:focus, .form-group select:focus { outline: 2px solid var(--primary); border-color: transparent; }
+
+    /* Results Table */
+    .results-card { background: var(--bg); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border); }
+    .results-card h2 { font-size: 1.2rem; margin-bottom: 1rem; }
+    .results-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; }
+    .results-table th, .results-table td { padding: 0.6rem 0; border-bottom: 1px solid var(--border); }
+    .results-table tr.highlight td { font-weight: 700; color: var(--primary-dark); font-size: 1.05rem; border-bottom: none; }
+
+    /* Expanded Content Typography & Formatting */
+    .content-section { 
+      margin-top: 3.5rem; 
+      background: var(--card-bg); 
+      padding: 2.5rem; 
+      border-radius: 12px; 
+      border: 1px solid var(--border); 
+    }
+    
+    .content-section h2 { font-size: 1.8rem; margin-bottom: 1.2rem; color: var(--text); border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; }
+    .content-section h3 { font-size: 1.3rem; margin: 2rem 0 0.8rem; color: var(--primary-dark); }
+    .content-section h4 { font-size: 1.1rem; margin: 1.2rem 0 0.5rem; color: var(--text); }
+    .content-section p { margin-bottom: 1.2rem; color: var(--text-muted); font-size: 1rem; line-height: 1.7; }
+    
+    .content-section ul, .content-section ol { margin: 0 0 1.5rem 1.5rem; color: var(--text-muted); }
+    .content-section li { margin-bottom: 0.5rem; line-height: 1.6; }
+
+    /* Embedded In-Content Data Tables */
+    .content-section table { width: 100%; border-collapse: collapse; margin: 1.5rem 0 2rem; background: var(--bg); border-radius: 6px; overflow: hidden; border: 1px solid var(--border); }
+    .content-section th, .content-section td { padding: 0.8rem 1rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.95rem; }
+    .content-section th { background: #edf2f7; font-weight: 600; color: var(--text); }
+    .content-section tr:last-child td { border-bottom: none; }
+
+    /* Hub Section */
+    .hub-section, .faq-section { margin-top: 3.5rem; }
+    .hub-section h2, .faq-section h2 { font-size: 1.5rem; margin-bottom: 1.5rem; text-align: center; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.2rem; }
+    .card { background: var(--card-bg); border: 1px solid var(--border); padding: 1.25rem; border-radius: 8px; text-decoration: none; color: inherit; transition: transform 0.1s, border-color 0.1s; }
+    .card:hover { transform: translateY(-2px); border-color: var(--primary); }
+    .card h3 { font-size: 1.1rem; color: var(--primary); margin-bottom: 0.3rem; }
+    .card p { font-size: 0.85rem; color: var(--text-muted); }
+
+    /* FAQ Accordion Details */
+    .faq-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 6px; padding: 1rem; margin-bottom: 0.8rem; }
+    .faq-item summary { font-weight: 600; cursor: pointer; color: var(--text); }
+    .faq-item p { margin-top: 0.5rem; color: var(--text-muted); font-size: 0.95rem; }
+
+    /* Footer */
+    footer { text-align: center; padding: 2rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 4rem; }
+
+    /* Mobile Responsive Styles */
+    @media (max-width: 768px) {
+      header { padding: 1rem; }
+      .calc-container { grid-template-columns: 1fr; }
+      .menu-toggle { display: block; }
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0; right: 0;
+        background: var(--card-bg);
+        border-bottom: 1px solid var(--border);
+        padding: 1rem;
+        gap: 0.8rem;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+      }
+      .nav-menu.active { display: flex; }
+      .content-section { padding: 1.2rem; }
+      .content-section table { display: block; overflow-x: auto; white-space: nowrap; }
+    }
+  </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T3E3V013H2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-T3E3V013H2');
+</script>
+</head>
+<body>
+
+  <header>
+    <nav aria-label="Main Navigation">
+      <a href="/" class="logo-container">
+        <img src="assets/logo.png" alt="TakeHomePayCalc Logo" class="logo-img" width="38" height="38">
+        <span class="logo-text">Takehomepaycalc</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">☰</button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="/scotland-take-home-pay-calculator">Scotland</a></li>
+        <li><a href="/nhs-take-home-pay-calculator">NHS</a></li>
+        <li><a href="/teacher-take-home-pay-calculator">Teachers</a></li>
+        <li><a href="/monthly-take-home-pay-calculator">Monthly</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-title">
+      <h1>London Take-Home Pay Calculator (2026/2027)</h1>
+      <p>Calculate your net salary in London including Inner & Outer London Weighting, High Cost Area Supplements, PAYE tax, NI, and pension.</p>
+    </section>
+
+    <!-- Interactive Calculator Component -->
+    <section class="calc-container" aria-label="London Salary Calculator Tool">
+      <div class="calc-inputs">
+        <div class="form-group">
+          <label for="base-salary">Base Annual Salary (£)</label>
+          <input type="number" id="base-salary" value="45000" placeholder="e.g. 45000" oninput="calculateLondonPay()" aria-required="true">
+        </div>
+        <div class="form-group">
+          <label for="london-weighting">London Zone / Allowance Type</label>
+          <select id="london-weighting" onchange="toggleCustomWeighting(); calculateLondonPay();">
+            <option value="none">No London Weighting Allowance</option>
+            <option value="inner_corporate" selected>Inner London Weighting (Fixed £6,000)</option>
+            <option value="outer_corporate">Outer London Weighting (Fixed £3,500)</option>
+            <option value="fringe_corporate">Fringe Area Allowance (Fixed £1,500)</option>
+            <option value="nhs_inner">NHS Inner London HCAS (20% | Max £5,735)</option>
+            <option value="nhs_outer">NHS Outer London HCAS (15% | Max £4,473)</option>
+            <option value="nhs_fringe">NHS Fringe HCAS (5% | Max £2,011)</option>
+            <option value="custom">Custom Allowance Value</option>
+          </select>
+        </div>
+        <div class="form-group" id="custom-weighting-group" style="display: none;">
+          <label for="custom-weighting">Custom Allowance Amount (£/year)</label>
+          <input type="number" id="custom-weighting" value="4000" placeholder="e.g. 4000" oninput="calculateLondonPay()">
+        </div>
+        <div class="form-group">
+          <label for="pension-rate">Workplace Pension Contribution (%)</label>
+          <input type="number" id="pension-rate" value="5" min="0" max="50" step="0.5" oninput="calculateLondonPay()">
+        </div>
+        <div class="form-group">
+          <label for="tax-year">Tax Year</label>
+          <select id="tax-year" onchange="calculateLondonPay()">
+            <option value="2026">2026 / 2027</option>
+            <option value="2025">2025 / 2026</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="student-loan">Student Loan Plan</label>
+          <select id="student-loan" onchange="calculateLondonPay()">
+            <option value="none">No Student Loan Repayment</option>
+            <option value="plan1">Plan 1 (Pre-2012)</option>
+            <option value="plan2" selected>Plan 2 (Post-2012 England & Wales)</option>
+            <option value="plan5">Plan 5 (Undergraduates 2023+)</option>
+            <option value="postgrad">Postgraduate Loan Only (6%)</option>
+            <option value="plan2_postgrad">Plan 2 + Postgraduate Loan</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="results-card" aria-live="polite">
+        <h2>Your Net London Pay Breakdown</h2>
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th scope="col">Deduction Item</th>
+              <th scope="col">Yearly</th>
+              <th scope="col">Monthly</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Base Salary</td>
+              <td id="base-year">£0</td>
+              <td id="base-month">£0</td>
+            </tr>
+            <tr>
+              <td>London Weighting / Allowance</td>
+              <td id="weighting-year">£0</td>
+              <td id="weighting-month">£0</td>
+            </tr>
+            <tr>
+              <td>Total Gross Pay</td>
+              <td id="gross-year">£0</td>
+              <td id="gross-month">£0</td>
+            </tr>
+            <tr>
+              <td>Workplace Pension Deduction</td>
+              <td id="pension-year">£0</td>
+              <td id="pension-month">£0</td>
+            </tr>
+            <tr>
+              <td>Income Tax (PAYE)</td>
+              <td id="tax-year-val">£0</td>
+              <td id="tax-month-val">£0</td>
+            </tr>
+            <tr>
+              <td>National Insurance (Class 1)</td>
+              <td id="ni-year">£0</td>
+              <td id="ni-month">£0</td>
+            </tr>
+            <tr>
+              <td>Student Loan Repayment</td>
+              <td id="loan-year">£0</td>
+              <td id="loan-month">£0</td>
+            </tr>
+            <tr class="highlight">
+              <td>Net Take-Home Pay</td>
+              <td id="net-year">£0</td>
+              <td id="net-month">£0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SEO Comprehensive Guide Section -->
+    <article class="content-section">
+      <h2>Comprehensive Guide to London Take-Home Pay, Weighting, and Cost of Living</h2>
+      <p>Living and working in Greater London presents a unique financial dynamic within the United Kingdom. While nominal salaries in the capital are significantly higher than national averages, the elevated costs of housing, transportation, and general daily living mean that understanding your exact net take-home pay is vital for personal financial planning.</p>
+      
+      <p>To offset the capital's premium costs, public sector employers (such as the NHS, civil service, emergency services, and education trusts) and major corporate organizations add a supplementary uplift to basic salaries known as <strong>London Weighting</strong> or <strong>High Cost Area Supplements (HCAS)</strong>. This guide breaks down how London allowances work, how they are taxed, and how statutory deductions affect your final salary.</p>
+
+      <h3>1. What is London Weighting and How Does It Work?</h3>
+      <p>London Weighting is a geographic salary supplement originally introduced for public sector workers in the mid-20th century to address recruitment and retention challenges caused by Greater London's higher living costs. Today, London allowances are structured around defined geographic concentric zones around the capital:</p>
+
+      <ul>
+        <li>
+          <strong>Inner London Zone:</strong> Covers central London boroughs (such as Camden, Westminster, Islington, Lambeth, Southwark, and Tower Hamlets). Because housing costs and central transport fares are highest here, Inner London Weighting offers the largest financial supplement.
+        </li>
+        <li>
+          <strong>Outer London Zone:</strong> Covers outer London boroughs (such as Barnet, Croydon, Ealing, Enfield, Greenwich, and Hounslow). Allowance amounts are lower than Inner London but remain substantial.
+        </li>
+        <li>
+          <strong>Fringe Zone:</strong> Covers commuter counties bordering London (such as parts of Surrey, Hertfordshire, Essex, and Kent) where living costs are elevated compared to the rest of the UK.
+        </li>
+      </ul>
+
+      <h3>2. Sector-by-Sector London Weighting Benchmarks</h3>
+      <p>Allowance rates vary depending on your employer's sector and collective bargaining agreements. The table below outlines standard regional allowances across key UK sectors:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Employment Sector</th>
+            <th>Inner London Allowance</th>
+            <th>Outer London Allowance</th>
+            <th>Fringe / Commuter Zone</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>NHS (Agenda for Change HCAS)</strong></td>
+            <td>20% of basic pay (Min £5,116 / Max £5,735)</td>
+            <td>15% of basic pay (Min £4,313 / Max £4,473)</td>
+            <td>5% of basic pay (Min £1,192 / Max £2,011)</td>
+          </tr>
+          <tr>
+            <td><strong>State Education (STPCD)</strong></td>
+            <td>£7,098 per year (MPS M1: £38,748)</td>
+            <td>£4,350 per year (MPS M1: £36,000)</td>
+            <td>£1,350 per year (MPS M1: £33,000)</td>
+          </tr>
+          <tr>
+            <td><strong>Civil Service & Public Agencies</strong></td>
+            <td>£4,000 – £6,500 per year</td>
+            <td>£2,000 – £3,500 per year</td>
+            <td>£1,000 – £1,800 per year</td>
+          </tr>
+          <tr>
+            <td><strong>Metropolitan Police / Emergency</strong></td>
+            <td>£7,000 – £8,500 per year (incl. South East)</td>
+            <td>£4,500 – £6,000 per year</td>
+            <td>£2,000 – £3,000 per year</td>
+          </tr>
+          <tr>
+            <td><strong>Corporate, Finance & Tech</strong></td>
+            <td>£5,000 – £12,000+ (bundled into base salary)</td>
+            <td>£3,000 – £6,000 per year</td>
+            <td>Varies by employer policy</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>3. Tax and Statutory Deductions on London Allowances</h3>
+      <p>A common misconception among workers moving to London is that London Weighting is a tax-free expense allowance. In reality, HMRC treats London Weighting as standard taxable gross salary. All supplementary London payments are subject to identical statutory deductions as your base salary:</p>
+
+      <ul>
+        <li>
+          <strong>PAYE Income Tax:</strong> Evaluated on total gross earnings (Base Pay + London Weighting - Pension Contributions). Standard Personal Allowance (£12,570) is tax-free. Earnings above this threshold up to £50,270 are taxed at the Basic Rate (20%). Income between £50,271 and £125,140 is taxed at the Higher Rate (40%), while earnings over £125,140 face the Additional Rate (45%).
+        </li>
+        <li>
+          <strong>Class 1 National Insurance:</strong> Primary employee contributions are charged at <strong>8%</strong> on gross earnings between £12,570 and £50,270 per year. Gross earnings exceeding £50,270 incur an Upper Rate charge of <strong>2%</strong>.
+        </li>
+        <li>
+          <strong>Workplace Pension Contributions:</strong> Auto-enrolment workplace pensions or public sector schemes (such as NHS Pensions or Civil Service Alpha) calculate contributions based on total pensionable earnings, which include fixed London Weighting allowances.
+        </li>
+        <li>
+          <strong>Student Loan Repayments:</strong> Calculated as a flat percentage on gross pay above your plan threshold (e.g., 9% over £27,295 for Plan 2). Because London Weighting increases your overall gross pay, your monthly student loan deduction will rise accordingly.
+        </li>
+      </ul>
+
+      <h3>4. In-Depth Step-by-Step London Take-Home Pay Calculations</h3>
+      <p>The following detailed examples demonstrate how London Weighting affects net monthly pay for workers across different earning tiers.</p>
+
+      <h4>Case Study 1: Mid-Level Corporate Professional in Inner London</h4>
+      <p>A marketing manager in central London with a base salary of £45,000 plus a fixed £6,000 Inner London allowance:</p>
+
+      <ul>
+        <li><strong>Base Annual Salary:</strong> £45,000.00</li>
+        <li><strong>Inner London Allowance:</strong> £6,000.00</li>
+        <li><strong>Total Gross Annual Pay:</strong> £51,000.00</li>
+        <li><strong>Workplace Pension:</strong> 5% salary sacrifice (£2,550.00/year)</li>
+        <li><strong>Student Loan:</strong> Plan 2</li>
+      </ul>
+
+      <p><strong>Step 1: Calculate Taxable & Pensionable Gross Pay</strong><br>
+      Total Gross Pay = £45,000.00 + £6,000.00 = <strong>£51,000.00</strong>.<br>
+      Pension Contribution (5%) = £51,000.00 × 5% = <strong>£2,550.00</strong> annual deduction (£212.50 / month).<br>
+      Taxable Gross Income = £51,000.00 − £2,550.00 = <strong>£48,450.00</strong>.</p>
+
+      <p><strong>Step 2: Calculate PAYE Income Tax</strong><br>
+      Taxable amount over Personal Allowance (£12,570.00): £48,450.00 − £12,570.00 = £35,880.00.<br>
+      Because taxable income (£48,450.00) is below the £50,270 Higher Rate threshold, all taxable income is taxed at the Basic Rate (20%):<br>
+      £35,880.00 × 20% = <strong>£7,176.00</strong> annual tax (£598.00 / month).</p>
+
+      <p><strong>Step 3: Calculate Class 1 National Insurance</strong><br>
+      Gross income over NI threshold (£12,570.00) up to Upper Limit (£50,270.00): £50,270.00 − £12,570.00 = £37,700.00 × 8% = £3,016.00.<br>
+      Gross income above Upper Limit (£50,270.00): £51,000.00 − £50,270.00 = £730.00 × 2% = £14.60.<br>
+      Total National Insurance = £3,016.00 + £14.60 = <strong>£3,030.60</strong> annual NI (£252.55 / month).</p>
+
+      <p><strong>Step 4: Calculate Student Loan (Plan 2)</strong><br>
+      Gross income over threshold (£27,295.00): £51,000.00 − £27,295.00 = £23,705.00.<br>
+      9% Repayment Rate: £23,705.00 × 9% = <strong>£2,133.45</strong> annual repayment (£177.79 / month).</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Pay Element / Deduction Item</th>
+            <th>Annual Figure (£)</th>
+            <th>Monthly Figure (£)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Base Salary</td>
+            <td>£45,000.00</td>
+            <td>£3,750.00</td>
+          </tr>
+          <tr>
+            <td>Inner London Weighting Allowance</td>
+            <td>£6,000.00</td>
+            <td>£500.00</td>
+          </tr>
+          <tr>
+            <td><strong>Total Gross Salary</strong></td>
+            <td><strong>£51,000.00</strong></td>
+            <td><strong>£4,250.00</strong></td>
+          </tr>
+          <tr>
+            <td>Workplace Pension (5%)</td>
+            <td>−£2,550.00</td>
+            <td>−£212.50</td>
+          </tr>
+          <tr>
+            <td>PAYE Income Tax</td>
+            <td>−£7,176.00</td>
+            <td>−£598.00</td>
+          </tr>
+          <tr>
+            <td>Class 1 National Insurance</td>
+            <td>−£3,030.60</td>
+            <td>−£252.55</td>
+          </tr>
+          <tr>
+            <td>Student Loan (Plan 2)</td>
+            <td>−£2,133.45</td>
+            <td>−£177.79</td>
+          </tr>
+          <tr>
+            <td><strong>Net Take-Home Pay</strong></td>
+            <td><strong>£36,109.95</strong></td>
+            <td><strong>£3,009.16</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>Case Study 2: NHS Senior Specialist Nurse (Band 7 Inner London HCAS)</h4>
+      <p>An NHS Band 7 nurse in central London earning £46,148 base pay plus the 20% NHS Inner London High Cost Area Supplement:</p>
+
+      <ul>
+        <li><strong>Base Band 7 Salary:</strong> £46,148.00</li>
+        <li><strong>NHS Inner London HCAS:</strong> 20% of base (£9,229.60), capped at statutory maximum <strong>£5,735.00</strong></li>
+        <li><strong>Total Gross Annual Salary:</strong> £51,883.00</li>
+        <li><strong>NHS Pension Tier Deduction:</strong> 9.8% (£5,084.53/year)</li>
+        <li><strong>Student Loan:</strong> None</li>
+      </ul>
+
+      <p><strong>Step 1: Calculate NHS HCAS Allowance & Pension Deduction</strong><br>
+      HCAS: 20% of £46,148 = £9,229.60 → capped at max threshold = <strong>£5,735.00</strong>.<br>
+      Total Gross Pay = £46,148.00 + £5,735.00 = <strong>£51,883.00</strong>.<br>
+      NHS Pension (9.8% Tier rate on gross): £51,883.00 × 9.8% = <strong>£5,084.53</strong> annual pension (£423.71 / month).</p>
+
+      <p><strong>Step 2: Calculate PAYE Income Tax</strong><br>
+      Taxable Income (Net Pay Arrangement) = £51,883.00 − £5,084.53 = <strong>£46,798.47</strong>.<br>
+      Taxable amount over Personal Allowance (£12,570.00): £46,798.47 − £12,570.00 = £34,228.47.<br>
+      Because taxable pay is below £50,270, all taxable pay is taxed at 20%:<br>
+      £34,228.47 × 20% = <strong>£6,845.69</strong> annual tax (£570.47 / month).</p>
+
+      <p><strong>Step 3: Calculate Class 1 National Insurance</strong><br>
+      Main Band (8%): (£50,270.00 − £12,570.00) × 8% = £3,016.00.<br>
+      Upper Band (2%): (£51,883.00 − £50,270.00) × 2% = £1,613.00 × 2% = £32.26.<br>
+      Total National Insurance = £3,016.00 + £32.26 = <strong>£3,048.26</strong> annual NI (£254.02 / month).</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Pay Element / Deduction Item</th>
+            <th>Annual Figure (£)</th>
+            <th>Monthly Figure (£)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Base Pay (NHS Band 7)</td>
+            <td>£46,148.00</td>
+            <td>£3,845.67</td>
+          </tr>
+          <tr>
+            <td>NHS Inner London HCAS (Capped)</td>
+            <td>£5,735.00</td>
+            <td>£477.92</td>
+          </tr>
+          <tr>
+            <td><strong>Total Gross Salary</strong></td>
+            <td><strong>£51,883.00</strong></td>
+            <td><strong>£4,323.58</strong></td>
+          </tr>
+          <tr>
+            <td>NHS Pension (9.8%)</td>
+            <td>−£5,084.53</td>
+            <td>−£423.71</td>
+          </tr>
+          <tr>
+            <td>PAYE Income Tax</td>
+            <td>−£6,845.69</td>
+            <td>−£570.47</td>
+          </tr>
+          <tr>
+            <td>Class 1 National Insurance</td>
+            <td>−£3,048.26</td>
+            <td>−£254.02</td>
+          </tr>
+          <tr>
+            <td><strong>Net Take-Home Pay</strong></td>
+            <td><strong>£36,904.52</strong></td>
+            <td><strong>£3,075.38</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>5. Key Financial Considerations for London Workers</h3>
+      <p>When budgeting your net monthly pay in London, consider these core expenses and tax-saving opportunities:</p>
+
+      <ul>
+        <li>
+          <strong>TfL Commuting & Travelcard Schemes:</strong> Transport for London (TfL) travel costs constitute a major expense for London workers. Many employers offer interest-free annual travelcard loans or salary sacrifice bicycle programs (Cycle to Work scheme), which allow you to pay for equipment tax-free.
+        </li>
+        <li>
+          <strong>Tapered Personal Allowance Threshold (£100,000+):</strong> Because higher corporate salaries are common in London, beware of the £100,000 income threshold. For every £2 earned over £100,000, your £12,570 Personal Allowance is reduced by £1, creating an effective marginal tax rate of 60% between £100,000 and £125,140. Increasing workplace pension contributions via salary sacrifice is a popular strategy to pull taxable gross back below £100,000.
+        </li>
+        <li>
+          <strong>Remote & Hybrid Working Adjustments:</strong> Some organizations adjust London Weighting allowances if an employee works remotely outside London for a majority of their contractual hours. Check your employment contract regarding location-based pay terms.
+        </li>
+      </ul>
+    </article>
+
+    <!-- Specialized Hub Navigation Section -->
+    <section class="hub-section">
+      <h2>Specialized UK Tax & Salary Calculators</h2>
+      <div class="grid">
+        <a href="/scotland-take-home-pay-calculator" class="card">
+          <h3>Scottish Tax Calculator</h3>
+          <p>Calculations using Scottish Income Tax bands and thresholds.</p>
+        </a>
+        <a href="/nhs-take-home-pay-calculator" class="card">
+          <h3>NHS Pay Calculator</h3>
+          <p>Accounts for Agenda for Change bands and NHS pension tiers.</p>
+        </a>
+        <a href="/teacher-take-home-pay-calculator" class="card">
+          <h3>Teacher Pay Calculator</h3>
+          <p>Calculates salary after Teachers' Pension Scheme (TPS) deductions.</p>
+        </a>
+        <a href="/monthly-take-home-pay-calculator" class="card">
+          <h3>Monthly Pay Calculator</h3>
+          <p>Detailed monthly and weekly take-home pay budgeting breakdown.</p>
+        </a>
+        <a href="/london-take-home-pay-calculator" class="card">
+          <h3>London Weighting Calculator</h3>
+          <p>Includes High Cost Area Supplements for London commuters.</p>
+        </a>
+        <a href="/take-home-pay-calculator-2025-2026" class="card">
+          <h3>2025/2026 Tax Year Tool</h3>
+          <p>Compare previous tax years against current income tax rates.</p>
+        </a>
+        <a href="/ni-take-home-pay-calculator" class="card">
+          <h3>Northern Ireland Calculator</h3>
+          <p>Take-home pay estimates tailored for Northern Ireland employees.</p>
+        </a>
+        <a href="/ireland-take-home-pay-calculator" class="card">
+          <h3>Republic of Ireland Calculator</h3>
+          <p>Includes USC, PRSI, and Irish Tax Credit calculations.</p>
+        </a>
+        <a href="/student-loan-take-home-pay-calculator" class="card">
+          <h3>Student Loan Calculator</h3>
+          <p>Calculates deductions across Plan 1, Plan 2, Plan 5 & Postgrad loans.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+
+      <details class="faq-item">
+        <summary>What is London Weighting and how does it affect take-home pay?</summary>
+        <p>London Weighting is a supplementary allowance added to basic salaries to help workers cover higher living, housing, and transport costs in Greater London. It increases your total gross pay and is subject to regular PAYE Income Tax, National Insurance, and pension deductions.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is London Weighting tax-free?</summary>
+        <p>No. HMRC treats London Weighting as regular taxable employment income. Income tax, National Insurance, and pension deductions are calculated on your total combined income (Base Salary + London Weighting).</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How much is NHS Inner London High Cost Area Supplement (HCAS)?</summary>
+        <p>For NHS Agenda for Change staff, Inner London HCAS is 20% of basic pay, subject to a minimum payment of £5,116 and a maximum cap of £5,735 per year.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What is the difference between Inner London and Outer London pay?</summary>
+        <p>Inner London pay ranges feature higher allowance amounts (e.g. £6,000–£7,500/year in teaching and civil service) due to higher housing and central transit costs, whereas Outer London allowances are lower (e.g. £3,500–£4,500/year).</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How does London Weighting affect pension contributions?</summary>
+        <p>In most public sector schemes (NHS, Teachers' Pension, Civil Service) and corporate schemes, London Weighting is classed as pensionable pay. This increases both your pension contributions and your resulting retirement benefit calculation.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How much extra net pay do I actually get from a £6,000 London Weighting?</summary>
+        <p>For a basic rate taxpayer (20% tax + 8% NI), a £6,000 gross London Weighting allowance yields approximately <strong>£4,320 in net annual take-home pay</strong> (approx. £360 extra per month) before pension and student loan deductions.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Does London Weighting affect Student Loan repayments?</summary>
+        <p>Yes. Student loan repayments are calculated on gross income above your plan threshold. Adding a London Weighting allowance increases gross pay, which increases monthly student loan deductions.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What happens to my tax if my salary plus London Weighting exceeds £100,000?</summary>
+        <p>If your total gross salary exceeds £100,000, your Personal Allowance (£12,570) is reduced by £1 for every £2 earned above £100,000, resulting in an effective 60% marginal tax rate on income between £100,000 and £125,140.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can I sacrifice part of my London salary into pension to stay below the tax trap?</summary>
+        <p>Yes. Paying into a workplace pension via salary sacrifice reduces your taxable gross income, allowing you to preserve your Personal Allowance and avoid Higher Rate or 60% marginal tax bands.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Are teachers paid more in London?</summary>
+        <p>Yes. State school teachers in London operate on elevated salary scales: Main Pay Scale M1 starts at £38,748 in Inner London and £36,000 in Outer London, compared to £31,650 across the rest of England.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Do remote or hybrid workers in London keep their London Weighting?</summary>
+        <p>This depends on your employment contract. Some organizations require staff to work a minimum number of days in a London office location to maintain full London Weighting allowances.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How are commute travelcards taxed in London?</summary>
+        <p>If an employer provides an interest-free season ticket loan, it is generally not treated as a taxable benefit-in-kind if the total loan value is under £10,000 per tax year.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 TakeHomePayCalc.me — Accurate UK Net Salary & Income Tax Calculations</p>
+  </footer>
+
+  <script>
+    // Navigation Toggle Logic
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    // Toggle Custom Weighting Input Visibility
+    function toggleCustomWeighting() {
+      const selectVal = document.getElementById('london-weighting').value;
+      const customGroup = document.getElementById('custom-weighting-group');
+      if (selectVal === 'custom') {
+        customGroup.style.display = 'block';
+      } else {
+        customGroup.style.display = 'none';
+      }
+    }
+
+    // London Weighting Calculation Logic
+    function getLondonAllowance(baseSalary) {
+      const type = document.getElementById('london-weighting').value;
+      if (type === 'none') return 0;
+      if (type === 'inner_corporate') return 6000;
+      if (type === 'outer_corporate') return 3500;
+      if (type === 'fringe_corporate') return 1500;
+      
+      // NHS High Cost Area Supplement (HCAS) Rules
+      if (type === 'nhs_inner') {
+        const raw = baseSalary * 0.20;
+        return Math.min(Math.max(raw, 5116), 5735);
+      }
+      if (type === 'nhs_outer') {
+        const raw = baseSalary * 0.15;
+        return Math.min(Math.max(raw, 4313), 4473);
+      }
+      if (type === 'nhs_fringe') {
+        const raw = baseSalary * 0.05;
+        return Math.min(Math.max(raw, 1192), 2011);
+      }
+      if (type === 'custom') {
+        return parseFloat(document.getElementById('custom-weighting').value) || 0;
+      }
+      return 0;
+    }
+
+    // Core London Net Pay Engine Logic
+    function calculateLondonPay() {
+      const base = parseFloat(document.getElementById('base-salary').value) || 0;
+      const allowance = getLondonAllowance(base);
+      const gross = base + allowance;
+
+      const pensionRate = (parseFloat(document.getElementById('pension-rate').value) || 0) / 100;
+      const pensionDeduction = gross * pensionRate;
+
+      const loanPlan = document.getElementById('student-loan').value;
+
+      // Personal Allowance Tapering above £100,000 gross
+      let personalAllowance = 12570;
+      if (gross > 100000) {
+        const reduction = (gross - 100000) / 2;
+        personalAllowance = Math.max(0, personalAllowance - reduction);
+      }
+
+      const taxableGross = Math.max(0, gross - pensionDeduction);
+
+      // PAYE Income Tax Calculation
+      let tax = 0;
+      const basicRateThreshold = 50270;
+      const higherRateThreshold = 125140;
+
+      if (taxableGross > personalAllowance) {
+        if (taxableGross <= basicRateThreshold) {
+          tax = (taxableGross - personalAllowance) * 0.20;
+        } else if (taxableGross <= higherRateThreshold) {
+          tax = ((basicRateThreshold - personalAllowance) * 0.20) + ((taxableGross - basicRateThreshold) * 0.40);
+        } else {
+          tax = ((basicRateThreshold - personalAllowance) * 0.20) + 
+                ((higherRateThreshold - basicRateThreshold) * 0.40) + 
+                ((taxableGross - higherRateThreshold) * 0.45);
+        }
+      }
+
+      // Class 1 National Insurance Calculation (on gross before pension)
+      let ni = 0;
+      const niThreshold = 12570;
+      const niUpperLimit = 50270;
+      if (gross > niThreshold) {
+        if (gross <= niUpperLimit) {
+          ni = (gross - niThreshold) * 0.08;
+        } else {
+          ni = ((niUpperLimit - niThreshold) * 0.08) + ((gross - niUpperLimit) * 0.02);
+        }
+      }
+
+      // Student Loan Deduction Calculations
+      let studentLoanDeduction = 0;
+
+      if (loanPlan === 'plan1') {
+        const threshold = 24990;
+        if (gross > threshold) studentLoanDeduction = (gross - threshold) * 0.09;
+      } else if (loanPlan === 'plan2') {
+        const threshold = 27295;
+        if (gross > threshold) studentLoanDeduction = (gross - threshold) * 0.09;
+      } else if (loanPlan === 'plan5') {
+        const threshold = 25000;
+        if (gross > threshold) studentLoanDeduction = (gross - threshold) * 0.09;
+      } else if (loanPlan === 'postgrad') {
+        const threshold = 21000;
+        if (gross > threshold) studentLoanDeduction = (gross - threshold) * 0.06;
+      } else if (loanPlan === 'plan2_postgrad') {
+        let ugLoan = 0;
+        let pgLoan = 0;
+        if (gross > 27295) ugLoan = (gross - 27295) * 0.09;
+        if (gross > 21000) pgLoan = (gross - 21000) * 0.06;
+        studentLoanDeduction = ugLoan + pgLoan;
+      }
+
+      // Final Net Salary Summary
+      const net = gross - tax - ni - pensionDeduction - studentLoanDeduction;
+
+      document.getElementById('base-year').innerText = '£' + Math.round(base).toLocaleString();
+      document.getElementById('base-month').innerText = '£' + Math.round(base / 12).toLocaleString();
+
+      document.getElementById('weighting-year').innerText = '£' + Math.round(allowance).toLocaleString();
+      document.getElementById('weighting-month').innerText = '£' + Math.round(allowance / 12).toLocaleString();
+
+      document.getElementById('gross-year').innerText = '£' + Math.round(gross).toLocaleString();
+      document.getElementById('gross-month').innerText = '£' + Math.round(gross / 12).toLocaleString();
+
+      document.getElementById('pension-year').innerText = '£' + Math.round(pensionDeduction).toLocaleString();
+      document.getElementById('pension-month').innerText = '£' + Math.round(pensionDeduction / 12).toLocaleString();
+
+      document.getElementById('tax-year-val').innerText = '£' + Math.round(tax).toLocaleString();
+      document.getElementById('tax-month-val').innerText = '£' + Math.round(tax / 12).toLocaleString();
+
+      document.getElementById('ni-year').innerText = '£' + Math.round(ni).toLocaleString();
+      document.getElementById('ni-month').innerText = '£' + Math.round(ni / 12).toLocaleString();
+
+      document.getElementById('loan-year').innerText = '£' + Math.round(studentLoanDeduction).toLocaleString();
+      document.getElementById('loan-month').innerText = '£' + Math.round(studentLoanDeduction / 12).toLocaleString();
+
+      document.getElementById('net-year').innerText = '£' + Math.round(net).toLocaleString();
+      document.getElementById('net-month').innerText = '£' + Math.round(net / 12).toLocaleString();
+    }
+
+    // Initial Calculation Trigger
+    calculateLondonPay();
+  </script>
+</body>
+</html>
