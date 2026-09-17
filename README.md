@@ -37,4 +37,4 @@ A suite of net income and salary calculation tools designed to help individuals 
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/your-username/take-home-pay-calc.git](https://github.com/your-username/take-home-pay-calc.git)
+   git clone [https://github.com/aryusuf001/take-home-pay-calculator.git]([https://github.com/aryusuf001/take-home-pay-calculator.git)
